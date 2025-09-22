@@ -15,7 +15,7 @@ public class telaLogin extends javax.swing.JFrame {
         System.out.println(conexao);
 
         if (conexao != null) {
-            ImageIcon iconeVerde = new ImageIcon("src/icones/database_verde.png");
+            ImageIcon iconeVerde = new ImageIcon("src/icones/bancoverde.png");
             img.setIcon(iconeVerde);
 
         } else {
@@ -34,7 +34,7 @@ public class telaLogin extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
         btnlogin = new javax.swing.JButton();
         txtusuario = new javax.swing.JTextField();
         txtsenha = new javax.swing.JTextField();
@@ -50,7 +50,7 @@ public class telaLogin extends javax.swing.JFrame {
 
         jLabel2.setText("Senha");
 
-        jLabel3.setText("Tela Login");
+        titulo.setText("Tela Login");
 
         btnlogin.setText("Login");
 
@@ -62,9 +62,6 @@ public class telaLogin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -78,20 +75,22 @@ public class telaLogin extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2))
-                                .addGap(83, 83, 83)
+                                .addGap(62, 62, 62)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtusuario)
-                                    .addComponent(txtsenha, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))))))
+                                    .addComponent(txtusuario, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                                    .addComponent(txtsenha)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(titulo)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(titulo)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -144,10 +143,10 @@ public class telaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel titulo;
     private javax.swing.JTextField txtsenha;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
