@@ -1,15 +1,27 @@
 
 package VIEW;
 
+import DAO.ConexaoDAO;
+import java.sql.Connection;
+import javax.swing.ImageIcon;
+
 public class telaLogin extends javax.swing.JFrame {
 
+    Connection conexao = null;
+    
     public telaLogin() {
         initComponents();
-<<<<<<< HEAD
-        img.setSize(50, 50);
-=======
-        
->>>>>>> c2ebe0a6bb57e0e7fcdfb1e72ebfbdf61c38ab39
+        conexao = ConexaoDAO.conector();
+        System.out.println(conexao);
+
+        if (conexao != null) {
+            ImageIcon iconeVerde = new ImageIcon("src/icones/database_verde.png");
+            img.setIcon(iconeVerde);
+
+        } else {
+            ImageIcon iconeCinza = new ImageIcon("src/icones/banco_1.png");
+            img.setIcon(iconeCinza);
+        }
     }
 
     
