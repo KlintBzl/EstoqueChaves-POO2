@@ -1,14 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DTO;
 
-/**
- *
- * @author aluno.saolucas
- */
 public class ChaveDTO {
+    
+    private int id, numeracao, C, quantidade;
+    private String tipo;
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public int getNumeracao() {
+        return numeracao;
+    }
+    public void setNumeracao(int numeracao) {
+        this.numeracao = numeracao;
+    }
+    public int getC() {
+        return C;
+    }
+    public void setC(int C) {
+        this.C = C;
+    }
+    public int getQuantidade() {
+        return quantidade;
+    }
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+    public String getTipo() {
+        return tipo;
+    }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
     
 }

@@ -5,10 +5,10 @@ import DAO.ConexaoDAO;
 import DTO.UsuarioDTO;
 
 import VIEW.telaPrincipal;
-import java.awt.Color;
+import java.awt.*;
 import java.sql.*;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
+
 public class UsuarioDAO {
     Connection conexao = null;
     PreparedStatement pst = null;
