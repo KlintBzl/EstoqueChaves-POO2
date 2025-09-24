@@ -3,23 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/DTO/ChaveDTO.java</file>
+            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telacadastrar.java</file>
+            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaChaves.java</file>
             <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/DAO/UsuarioDAO.java</file>
-            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/DTO/UsuarioDTO.java</file>
             <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaLogin.java</file>
-            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/DAO/ConexaoDAO.java</file>
             <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaPrincipal.java</file>
             <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/DAO/ChaveDAO.java</file>
-=======
-<<<<<<< HEAD
-            <file>file:/C:/Users/Aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaLogin.java</file>
-            <file>file:/C:/Users/Aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaPrincipal.java</file>
-=======
-            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaLogin.java</file>
             <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/DAO/ConexaoDAO.java</file>
->>>>>>> f1369ac72f6dc7747d62ce92b88ed79f032b85b0
->>>>>>> b9a01b127625bc1ff6c6eb3c8ea5ef7872a84ad0
         </group>
     </open-files>
 </project-private>
