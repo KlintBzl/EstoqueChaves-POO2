@@ -6,7 +6,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     public telaPrincipal() {
         initComponents();
         
-        lblUsuarioPrincipal.setSize(50, 600);
+        
         
     }
 
@@ -17,10 +17,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         btnvoltar = new javax.swing.JButton();
         btnlistar = new javax.swing.JButton();
         btnadd = new javax.swing.JButton();
-        lblUsuarioPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        MenuUsuarios = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        MenuGer = new javax.swing.JMenu();
+        MenuUsuarios = new javax.swing.JMenuItem();
         MenuChaves = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,17 +43,15 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        lblUsuarioPrincipal.setText("Usuário");
-
-        MenuUsuarios.setText("Gerenciar");
-        MenuUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuGer.setText("Gerenciar");
+        MenuGer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuUsuariosMouseClicked(evt);
+                MenuGerMouseClicked(evt);
             }
         });
 
-        jMenuItem1.setText("Usuarios");
-        MenuUsuarios.add(jMenuItem1);
+        MenuUsuarios.setText("Usuarios");
+        MenuGer.add(MenuUsuarios);
 
         MenuChaves.setText("Chaves");
         MenuChaves.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -62,9 +59,9 @@ public class telaPrincipal extends javax.swing.JFrame {
                 MenuChavesMouseClicked(evt);
             }
         });
-        MenuUsuarios.add(MenuChaves);
+        MenuGer.add(MenuChaves);
 
-        jMenuBar1.add(MenuUsuarios);
+        jMenuBar1.add(MenuGer);
 
         setJMenuBar(jMenuBar1);
 
@@ -82,22 +79,15 @@ public class telaPrincipal extends javax.swing.JFrame {
                         .addComponent(btnadd)
                         .addGap(33, 33, 33)
                         .addComponent(btnlistar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblUsuarioPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnlistar)
-                            .addComponent(btnadd)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblUsuarioPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnlistar)
+                    .addComponent(btnadd))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
                 .addComponent(btnvoltar)
                 .addGap(18, 18, 18))
@@ -118,9 +108,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnaddActionPerformed
 
-    private void MenuUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUsuariosMouseClicked
+    private void MenuGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuGerMouseClicked
         
-    }//GEN-LAST:event_MenuUsuariosMouseClicked
+    }//GEN-LAST:event_MenuGerMouseClicked
 
     private void MenuChavesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuChavesMouseClicked
         
@@ -163,13 +153,12 @@ public class telaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem MenuChaves;
-    private javax.swing.JMenu MenuUsuarios;
+    public static javax.swing.JMenuItem MenuChaves;
+    private javax.swing.JMenu MenuGer;
+    public static javax.swing.JMenuItem MenuUsuarios;
     private javax.swing.JButton btnadd;
     private javax.swing.JButton btnlistar;
     private javax.swing.JButton btnvoltar;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    public static javax.swing.JLabel lblUsuarioPrincipal;
     // End of variables declaration//GEN-END:variables
 }
