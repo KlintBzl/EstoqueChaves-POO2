@@ -41,7 +41,7 @@ public class telaLogin extends javax.swing.JFrame {
         txtLogin = new javax.swing.JTextField();
         img = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblCadastrar = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
 
         jTextArea1.setColumns(20);
@@ -67,12 +67,12 @@ public class telaLogin extends javax.swing.JFrame {
 
         jLabel3.setText("Ainda não se cadastrou?");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("cadastre-se");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblCadastrar.setForeground(new java.awt.Color(0, 0, 250));
+        lblCadastrar.setText("Cadastre-se");
+        lblCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                lblCadastrarMouseClicked(evt);
             }
         });
 
@@ -104,7 +104,7 @@ public class telaLogin extends javax.swing.JFrame {
                                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                                         .addGap(44, 44, 44))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
+                                        .addComponent(lblCadastrar)
                                         .addGap(52, 52, 52))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(176, 176, 176)
@@ -134,7 +134,7 @@ public class telaLogin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
+                        .addComponent(lblCadastrar)
                         .addGap(35, 35, 35))))
         );
 
@@ -150,16 +150,16 @@ public class telaLogin extends javax.swing.JFrame {
         objUsuarioDTO.setSenha(senha);
         
         UsuarioDAO objUsuarioDAO = new UsuarioDAO();
-        
         objUsuarioDAO.logar(objUsuarioDTO);
+        
        this.dispose();
     }//GEN-LAST:event_btnloginActionPerformed
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void lblCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrarMouseClicked
         telacadastrar cadastro = new telacadastrar();
         cadastro.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_lblCadastrarMouseClicked
 
     public static void main(String args[]) {
         try {
@@ -194,10 +194,10 @@ public class telaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblCadastrar;
     private javax.swing.JLabel titulo;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtSenha;

@@ -73,7 +73,7 @@
                                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCadastrar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -115,7 +115,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCadastrar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -161,18 +161,18 @@
         <Property name="text" type="java.lang.String" value="Ainda n&#xe3;o se cadastrou?"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="lblCadastrar">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
+          <Color blue="fa" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="cadastre-se"/>
+        <Property name="text" type="java.lang.String" value="Cadastre-se"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor em Forma de M&#xe3;o"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblCadastrarMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="txtSenha">

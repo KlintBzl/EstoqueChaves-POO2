@@ -30,6 +30,10 @@ public class telaPrincipal extends javax.swing.JFrame {
         btnvoltar = new javax.swing.JButton();
         btnlistar = new javax.swing.JButton();
         btnadd = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        MenuUsuarios = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        MenuChaves = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +56,28 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        MenuUsuarios.setText("Gerenciar");
+        MenuUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuUsuariosMouseClicked(evt);
+            }
+        });
+
+        jMenuItem1.setText("Usuarios");
+        MenuUsuarios.add(jMenuItem1);
+
+        MenuChaves.setText("Chaves");
+        MenuChaves.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuChavesMouseClicked(evt);
+            }
+        });
+        MenuUsuarios.add(MenuChaves);
+
+        jMenuBar1.add(MenuUsuarios);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,7 +99,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnlistar)
                     .addComponent(btnadd))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
                 .addComponent(btnvoltar)
                 .addGap(18, 18, 18))
         );
@@ -83,12 +109,24 @@ public class telaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltarActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        telaLogin login = new telaLogin();
+        login.setVisible(true);
     }//GEN-LAST:event_btnvoltarActionPerformed
 
+<<<<<<< HEAD
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnaddActionPerformed
+=======
+    private void MenuUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUsuariosMouseClicked
+        
+    }//GEN-LAST:event_MenuUsuariosMouseClicked
+
+    private void MenuChavesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuChavesMouseClicked
+        
+    }//GEN-LAST:event_MenuChavesMouseClicked
+>>>>>>> 536883643f38426f80f772e011d26f3afbdd5139
 
     /**
      * @param args the command line arguments
@@ -126,8 +164,12 @@ public class telaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MenuChaves;
+    private javax.swing.JMenu MenuUsuarios;
     private javax.swing.JButton btnadd;
     private javax.swing.JButton btnlistar;
     private javax.swing.JButton btnvoltar;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
