@@ -10,9 +10,7 @@ public class telacadastrar extends javax.swing.JFrame {
 
     public telacadastrar() {
         initComponents();
-        ImageIcon iconeadd = new ImageIcon(getClass().getResource("/Imagens/volta.png"));
-                Image img1 = iconeadd.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH);
-                lblADD.setIcon(new ImageIcon(img1));
+        
     }
 
     
@@ -30,6 +28,8 @@ public class telacadastrar extends javax.swing.JFrame {
         lblADD = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela de cadastro");
+        setResizable(false);
 
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -44,6 +44,7 @@ public class telacadastrar extends javax.swing.JFrame {
 
         jLabel5.setText("Senha:");
 
+        lblADD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/voltar.png"))); // NOI18N
         lblADD.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         lblADD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblADD.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,6 +102,7 @@ public class telacadastrar extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed

@@ -30,6 +30,10 @@ public class telaPrincipal extends javax.swing.JFrame {
         btnvoltar = new javax.swing.JButton();
         btnlistar = new javax.swing.JButton();
         btnadd = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,6 +47,18 @@ public class telaPrincipal extends javax.swing.JFrame {
         btnlistar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/listar.png"))); // NOI18N
 
         btnadd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
+
+        jMenu3.setText("Gerenciar");
+
+        jMenuItem1.setText("Usuarios");
+        jMenu3.add(jMenuItem1);
+
+        jMenuItem2.setText("Chaves");
+        jMenu3.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,7 +81,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnlistar)
                     .addComponent(btnadd))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
                 .addComponent(btnvoltar)
                 .addGap(18, 18, 18))
         );
@@ -116,5 +132,9 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnadd;
     private javax.swing.JButton btnlistar;
     private javax.swing.JButton btnvoltar;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }
