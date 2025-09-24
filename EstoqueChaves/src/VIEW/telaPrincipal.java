@@ -103,7 +103,10 @@ public class telaPrincipal extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_btnvoltarActionPerformed
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> f04e1b1b2ca78a791d991374314b77badc09d62f
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnaddActionPerformed
