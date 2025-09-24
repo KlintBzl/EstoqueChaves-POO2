@@ -5,6 +5,7 @@ import DAO.UsuarioDAO;
 import DTO.UsuarioDTO;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class telacadastrar extends javax.swing.JFrame {
 
@@ -106,11 +107,20 @@ public class telacadastrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        
+        
+        
         String nome_usuario = txtNome.getText();
         String login_usuario = txtLogin.getText();
         String senha_usuario = txtSenha.getText();
         String perfil_usuario = "User";
 
+        if(nome_usuario.equals("") || login_usuario.equals("") || senha_usuario.equals("")){
+            
+            JOptionPane.showMessageDialog(null, "Informações inválidas!", "ERRO!", JOptionPane.ERROR_MESSAGE);
+            
+        }else{
+            
         UsuarioDTO objusuarioDTO = new UsuarioDTO();
         objusuarioDTO.setNome(nome_usuario);
         objusuarioDTO.setLogin(login_usuario);
@@ -120,8 +130,9 @@ public class telacadastrar extends javax.swing.JFrame {
         UsuarioDAO objUsuarioDAO = new UsuarioDAO();
         objUsuarioDAO.inserirUsuario(objusuarioDTO);
         txtNome.setText(null);
-        txtLogin.setText("");
+        txtLogin.setText(null);
         txtSenha.setText(null);
+        }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void lblADDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblADDMouseClicked

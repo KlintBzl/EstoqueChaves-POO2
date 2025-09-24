@@ -3,6 +3,7 @@ package DAO;
 import DAO.ConexaoDAO;
 import DTO.UsuarioDTO;
 import VIEW.telaPrincipal;
+import java.awt.Color;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -29,11 +30,16 @@ public class UsuarioDAO {
                 if (perfil.equals("admin")) {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
+                    telaPrincipal.lblUsuarioPrincipal.setText(rs.getString(2));
+                    telaPrincipal.lblUsuarioPrincipal.setForeground(Color.RED);
                     
             
                 } else {
+                    
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
+                    telaPrincipal.lblUsuarioPrincipal.setText(rs.getString(2));
+                    telaPrincipal.lblUsuarioPrincipal.setForeground(Color.BLUE);
                     
   
 
