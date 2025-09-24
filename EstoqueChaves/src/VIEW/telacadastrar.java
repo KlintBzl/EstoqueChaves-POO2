@@ -119,6 +119,9 @@ public class telacadastrar extends javax.swing.JFrame {
 
         UsuarioDAO objUsuarioDAO = new UsuarioDAO();
         objUsuarioDAO.inserirUsuario(objusuarioDTO);
+        txtNome.setText(null);
+        txtLogin.setText("");
+        txtSenha.setText(null);
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void lblADDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblADDMouseClicked

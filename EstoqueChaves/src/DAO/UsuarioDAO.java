@@ -83,10 +83,7 @@ public class UsuarioDAO {
             pst.setInt(1, objUsuarioDTO.getID());
             rs = pst.executeQuery();
             if (rs.next()) {
-                telaPrincipal.txtNome.setText(rs.getString(2));
-                telaPrincipal.txtLogin.setText(rs.getString(3));
-                telaPrincipal.txtSenha.setText(rs.getString(4));
-                telaPrincipal.cboPerfil.setSelectedItem(rs.getString(5));
+
                 conexao.close();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não cadastrado!");
@@ -105,8 +102,7 @@ public class UsuarioDAO {
         try {
             pst = conexao.prepareStatement(sql);
             rs = pst.executeQuery();
-            DefaultTableModel model = (DefaultTableModel) telaPrincipal.TbUsuarios.getModel();
-            model.setNumRows(0);
+
 
             while (rs.next()) {
                 int id = rs.getInt("id_usuario");
@@ -114,7 +110,7 @@ public class UsuarioDAO {
                 String login = rs.getString("login");
                 String senha = rs.getString("senha");
                 String perfil = rs.getString("perfil");
-                model.addRow(new Object[]{id, nome, login, senha, perfil});
+
             }
             conexao.close();
         } catch (Exception e) {
@@ -167,11 +163,7 @@ public class UsuarioDAO {
     }
 
     public void limparCampos() {
-        telaPrincipal.txtID.setText(null);
-        telaPrincipal.txtLogin.setText(null);
-        telaPrincipal.txtNome.setText(null);
-        telaPrincipal.txtSenha.setText(null);
-        telaPrincipal.cboPerfil.setSelectedItem(1);
+        
     }
 
 }
