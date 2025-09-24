@@ -40,9 +40,17 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnlistar.setBackground(new java.awt.Color(255, 245, 0));
         btnlistar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/listar.png"))); // NOI18N
 
+        btnadd.setBackground(new java.awt.Color(0, 127, 255));
+        btnadd.setForeground(new java.awt.Color(0, 127, 255));
         btnadd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
+        btnadd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnaddActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,11 +79,16 @@ public class telaPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnvoltarActionPerformed
+
+    private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnaddActionPerformed
 
     /**
      * @param args the command line arguments
