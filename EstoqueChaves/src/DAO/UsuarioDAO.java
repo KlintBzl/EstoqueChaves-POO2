@@ -34,13 +34,11 @@ public class UsuarioDAO {
                 if (perfil.equals("admin")) {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
-                    
-                    conexao.close();                  
+                                      
                 } else {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
                     
-                    conexao.close();
 
                 }
 

@@ -38,11 +38,11 @@ public class telaLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
         btnlogin = new javax.swing.JButton();
-        txtusuario = new javax.swing.JTextField();
-        txtsenha = new javax.swing.JTextField();
+        txtLogin = new javax.swing.JTextField();
         img = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txtSenha = new javax.swing.JPasswordField();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -67,7 +67,9 @@ public class telaLogin extends javax.swing.JFrame {
 
         jLabel3.setText("Ainda não se cadastrou?");
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("cadastre-se");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -89,8 +91,8 @@ public class telaLogin extends javax.swing.JFrame {
                                     .addComponent(jLabel2))
                                 .addGap(62, 62, 62)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtusuario, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                                    .addComponent(txtsenha)))
+                                    .addComponent(txtLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                                    .addComponent(txtSenha)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(img)
@@ -114,15 +116,14 @@ public class telaLogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(titulo)
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel2))
-                    .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -155,7 +156,7 @@ public class telaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        PrimeiroCadastro cadastro = new PrimeiroCadastro();
+        telacadastrar cadastro = new telacadastrar();
         cadastro.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
@@ -198,7 +199,7 @@ public class telaLogin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel titulo;
-    private javax.swing.JTextField txtsenha;
-    private javax.swing.JTextField txtusuario;
+    private javax.swing.JTextField txtLogin;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }
