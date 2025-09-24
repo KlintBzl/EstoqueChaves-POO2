@@ -2,6 +2,7 @@
 package DAO;
 
 import DAO.ConexaoDAO;
+import DTO.UsuarioDTO;
 
 import VIEW.telaPrincipal;
 import java.awt.Color;
