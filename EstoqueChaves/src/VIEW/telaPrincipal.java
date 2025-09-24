@@ -114,11 +114,10 @@ public class telaPrincipal extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_btnvoltarActionPerformed
 
-<<<<<<< HEAD
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnaddActionPerformed
-=======
+
     private void MenuUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUsuariosMouseClicked
         
     }//GEN-LAST:event_MenuUsuariosMouseClicked
@@ -126,7 +125,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     private void MenuChavesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuChavesMouseClicked
         
     }//GEN-LAST:event_MenuChavesMouseClicked
->>>>>>> 536883643f38426f80f772e011d26f3afbdd5139
+
 
     /**
      * @param args the command line arguments
