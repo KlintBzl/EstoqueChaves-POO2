@@ -30,16 +30,16 @@ public class UsuarioDAO {
                 if (perfil.equals("admin")) {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
-                    telaPrincipal.lblUsuarioPrincipal.setText(rs.getString(2));
-                    telaPrincipal.lblUsuarioPrincipal.setForeground(Color.RED);
+                    
                     
             
                 } else {
                     
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
-                    telaPrincipal.lblUsuarioPrincipal.setText(rs.getString(2));
-                    telaPrincipal.lblUsuarioPrincipal.setForeground(Color.BLUE);
+                    telaPrincipal.MenuUsuarios.setEnabled(false);
+                    telaPrincipal.MenuChaves.setEnabled(false);
+                    
                     
   
 
