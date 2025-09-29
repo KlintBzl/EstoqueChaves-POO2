@@ -6,6 +6,7 @@ import DAO.UsuarioDAO;
 import DTO.UsuarioDTO;
 import java.sql.Connection;
 import javax.swing.ImageIcon;
+import java.awt.*;
 
 public class telaLogin extends javax.swing.JFrame {
 
@@ -17,12 +18,11 @@ public class telaLogin extends javax.swing.JFrame {
         System.out.println(conexao);
 
         if (conexao != null) {
-            ImageIcon iconeVerde = new ImageIcon("src/icones/bancoverde.png");
+            ImageIcon iconeVerde = new ImageIcon("src/icones/Conectado.png");
             img.setIcon(iconeVerde);
-
-        } else {
-            ImageIcon iconeCinza = new ImageIcon("src/icones/banco_1.png");
-            img.setIcon(iconeCinza);
+        }else{
+            ImageIcon icone = new ImageIcon("src/icones/Desconectado.png");
+            img.setIcon(icone);
         }
     }
 
@@ -43,7 +43,6 @@ public class telaLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lblCadastrar = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -77,8 +76,6 @@ public class telaLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("jLabel4");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,24 +94,19 @@ public class telaLogin extends javax.swing.JFrame {
                                     .addComponent(txtLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
                                     .addComponent(txtSenha)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
+                                .addGap(50, 50, 50)
                                 .addComponent(img)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                                .addGap(93, 93, 93)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnlogin, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGap(44, 44, 44))
+                                    .addComponent(btnlogin, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(lblCadastrar)
-                                        .addGap(52, 52, 52))))))
+                                        .addGap(8, 8, 8))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(176, 176, 176)
                         .addComponent(titulo)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,25 +116,23 @@ public class telaLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(51, 51, 51)
+                        .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                         .addGap(45, 45, 45))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnlogin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblCadastrar)
-                        .addGap(35, 35, 35))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -201,7 +191,6 @@ public class telaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
