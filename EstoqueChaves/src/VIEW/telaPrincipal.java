@@ -24,6 +24,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tbChavesCadastradas1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         BarraDeMenuPrincipal = new javax.swing.JMenuBar();
         MenuGer = new javax.swing.JMenu();
         menutitulocadastrar = new javax.swing.JMenuItem();
@@ -31,6 +34,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuChaves = new javax.swing.JMenu();
         MenuVirgem = new javax.swing.JMenuItem();
         MenuUsada = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        MenuHistoricar = new javax.swing.JMenuItem();
         SeparadorDeOpcao = new javax.swing.JPopupMenu.Separator();
         MenuAjudar = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
@@ -42,6 +47,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuChaves1 = new javax.swing.JMenu();
         MenuVirgem1 = new javax.swing.JMenuItem();
         MenuUsada1 = new javax.swing.JMenuItem();
+        MenuHistorico = new javax.swing.JMenu();
         MenuAjuda = new javax.swing.JMenu();
         MenuSobre = new javax.swing.JMenuItem();
         MenuOpções = new javax.swing.JMenu();
@@ -147,6 +153,52 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         jLabel2.setText("Chaves Usadas em estoque");
 
+        jLabel3.setText("Histórico de entradas e saídas");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Data", "Historico", "Entradas", "Saídas", "Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        }
+
         MenuGer.setText("Gerenciar");
         MenuGer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -189,6 +241,10 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuChaves.add(MenuUsada);
 
         MenuGer.add(MenuChaves);
+        MenuGer.add(jSeparator3);
+
+        MenuHistoricar.setText("Histórico");
+        MenuGer.add(MenuHistoricar);
         MenuGer.add(SeparadorDeOpcao);
 
         MenuAjudar.setText("Ajuda");
@@ -236,6 +292,9 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         BarraDeMenuPrincipal.add(MenuCadastrar);
 
+        MenuHistorico.setText("Histórico");
+        BarraDeMenuPrincipal.add(MenuHistorico);
+
         MenuAjuda.setText("Ajuda");
 
         MenuSobre.setText("Sobre");
@@ -263,21 +322,27 @@ public class telaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(214, 214, 214))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(214, 214, 214))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(206, 206, 206))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(btnvoltar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(214, 214, 214)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(btnvoltar)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -291,9 +356,13 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnvoltar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -404,6 +473,8 @@ public class telaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenu MenuChaves;
     public static javax.swing.JMenu MenuChaves1;
     public static javax.swing.JMenu MenuGer;
+    private javax.swing.JMenuItem MenuHistoricar;
+    private javax.swing.JMenu MenuHistorico;
     private javax.swing.JMenuItem MenuOpicoes;
     private javax.swing.JMenu MenuOpções;
     private javax.swing.JMenuItem MenuSair;
@@ -419,11 +490,15 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnvoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    public static javax.swing.JTable jTable1;
     public static javax.swing.JMenuItem menutitulocadastrar;
     public static javax.swing.JTable tbChavesCadastradas;
     public static javax.swing.JTable tbChavesCadastradas1;
