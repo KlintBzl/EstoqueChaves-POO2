@@ -30,7 +30,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuAjudar = new javax.swing.JMenuItem();
         MenuCadastrar = new javax.swing.JMenu();
         MenuUsuarios1 = new javax.swing.JMenuItem();
-        MenuChaves1 = new javax.swing.JMenuItem();
+        MenuChaves1 = new javax.swing.JMenu();
+        MenuVirgem1 = new javax.swing.JMenuItem();
+        MenuUsada1 = new javax.swing.JMenuItem();
         MenuAjuda = new javax.swing.JMenu();
         MenuSobre = new javax.swing.JMenu();
         MenuOpções = new javax.swing.JMenu();
@@ -145,16 +147,13 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuCadastrar.add(MenuUsuarios1);
 
         MenuChaves1.setText("Chaves");
-        MenuChaves1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuChaves1MouseClicked(evt);
-            }
-        });
-        MenuChaves1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuChaves1ActionPerformed(evt);
-            }
-        });
+
+        MenuVirgem1.setText("Virgem");
+        MenuChaves1.add(MenuVirgem1);
+
+        MenuUsada1.setText("Usada");
+        MenuChaves1.add(MenuUsada1);
+
         MenuCadastrar.add(MenuChaves1);
 
         BarraDeMenuPrincipal.add(MenuCadastrar);
@@ -210,16 +209,10 @@ public class telaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnvoltarActionPerformed
 
     private void MenuUsuarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuarios1ActionPerformed
-        // TODO add your handling code here:
+        telaUsuarios usuarios = new telaUsuarios();
+        usuarios.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_MenuUsuarios1ActionPerformed
-
-    private void MenuChaves1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuChaves1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MenuChaves1MouseClicked
-
-    private void MenuChaves1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuChaves1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MenuChaves1ActionPerformed
 
     private void MenuGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuGerMouseClicked
 
@@ -236,7 +229,9 @@ public class telaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menutitulocadastrarActionPerformed
 
     private void MenuVirgemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuVirgemActionPerformed
-        // TODO add your handling code here:
+        telaChaves chave = new telaChaves();
+        chave.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_MenuVirgemActionPerformed
 
 
@@ -284,14 +279,16 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuAjudar;
     private javax.swing.JMenu MenuCadastrar;
     public static javax.swing.JMenu MenuChaves;
-    public static javax.swing.JMenuItem MenuChaves1;
+    public static javax.swing.JMenu MenuChaves1;
     public static javax.swing.JMenu MenuGer;
     private javax.swing.JMenu MenuOpções;
     private javax.swing.JMenu MenuSobre;
     public static javax.swing.JMenuItem MenuUsada;
+    private javax.swing.JMenuItem MenuUsada1;
     public static javax.swing.JMenuItem MenuUsuarios;
     public static javax.swing.JMenuItem MenuUsuarios1;
     public static javax.swing.JMenuItem MenuVirgem;
+    private javax.swing.JMenuItem MenuVirgem1;
     private javax.swing.JPopupMenu.Separator SeparadorDeOpcao;
     private javax.swing.JButton btnvoltar;
     private javax.swing.JLabel jLabel1;
