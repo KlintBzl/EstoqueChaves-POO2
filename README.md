@@ -40,11 +40,14 @@ Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar
 ---
 
 ## Histórico de Atualizações
+- **v2.2.0** - (29/09/2025)
+  - Adição de botões aperfeiçoados, melhorados e mais amplos.
+  - Incrementação da nova função de visualização de saídas e entradas do histórico.
+
 - **v2.1.0** - (29/09/2025)
   - Atualização de alguns ícones para melhor entendimento do usuário.
   - Ajustes nas inplementações de cadastro.
   - Alterações das funções para melhor funcionamento do sistema.
-  - Adição de botões aperfeiçoados, melhorados e mais amplos.
 
 - **v2.0.0** - (24/09/2025)
   - Segunda versão estável
