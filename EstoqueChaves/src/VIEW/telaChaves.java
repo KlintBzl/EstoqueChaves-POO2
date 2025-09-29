@@ -202,22 +202,20 @@ public class telaChaves extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 60, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnPesquisarChave)
-                        .addGap(18, 18, 18)
+                        .addGap(12, 12, 12)
                         .addComponent(btnEditarChave)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEliminarChave)
                         .addGap(21, 21, 21))))
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btnVoltar)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -266,6 +264,7 @@ public class telaChaves extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddChaveActionPerformed
+        
         int id_chaves = Integer.parseInt(txtID.getText());
         String tipo = txtTipo.getText();
         int numeracao = Integer.parseInt(txtNumeracao.getText());
@@ -286,16 +285,10 @@ public class telaChaves extends javax.swing.JFrame {
     private void btnPesquisarChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarChaveActionPerformed
         int id_chaves = Integer.parseInt(txtID.getText());
         String tipo = txtTipo.getText();
-        int numeracao = Integer.parseInt(txtNumeracao.getText());
-        int C = Integer.parseInt(txtC.getText());
-        int quantidade = Integer.parseInt(txtQuantidade.getText());
+        
 
         ChaveDTO objChaveDTO = new ChaveDTO();
         objChaveDTO.setId(id_chaves);
-        objChaveDTO.setTipo(tipo);
-        objChaveDTO.setNumeracao(numeracao);
-        objChaveDTO.setC(C);
-        objChaveDTO.setQuantidade(quantidade);
         
         ChaveDAO objChaveDAO = new ChaveDAO();
         objChaveDAO.pesquisar(objChaveDTO);

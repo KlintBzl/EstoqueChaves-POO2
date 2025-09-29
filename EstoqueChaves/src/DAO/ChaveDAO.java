@@ -26,7 +26,8 @@ public class ChaveDAO {
         String sql = "insert into tb_chaves (id_chaves, tipo, numeracao, C, quantidade)"
                 + " values (?, ?, ?, ?, ?)";
         conexao = ConexaoDAO.conector();
-
+        
+        
         try {
             pst = conexao.prepareStatement(sql);
             pst.setInt(1, objChaveDTO.getId());
