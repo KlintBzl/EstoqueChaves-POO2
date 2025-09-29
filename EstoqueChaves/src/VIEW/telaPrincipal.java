@@ -181,6 +181,11 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuChaves.add(MenuVirgem);
 
         MenuUsada.setText("Usada");
+        MenuUsada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuUsadaActionPerformed(evt);
+            }
+        });
         MenuChaves.add(MenuUsada);
 
         MenuGer.add(MenuChaves);
@@ -212,9 +217,19 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuChaves1.setText("Chaves");
 
         MenuVirgem1.setText("Virgem");
+        MenuVirgem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuVirgem1ActionPerformed(evt);
+            }
+        });
         MenuChaves1.add(MenuVirgem1);
 
         MenuUsada1.setText("Usada");
+        MenuUsada1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuUsada1ActionPerformed(evt);
+            }
+        });
         MenuChaves1.add(MenuUsada1);
 
         MenuCadastrar.add(MenuChaves1);
@@ -323,6 +338,24 @@ public class telaPrincipal extends javax.swing.JFrame {
             System.exit(sair);
         }
     }//GEN-LAST:event_MenuSairActionPerformed
+
+    private void MenuVirgem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuVirgem1ActionPerformed
+        telaChaves chave = new telaChaves();
+        chave.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_MenuVirgem1ActionPerformed
+
+    private void MenuUsadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsadaActionPerformed
+        telaChavesUsadas chave = new telaChavesUsadas();
+        chave.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_MenuUsadaActionPerformed
+
+    private void MenuUsada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsada1ActionPerformed
+        telaChavesUsadas chave = new telaChavesUsadas();
+        chave.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_MenuUsada1ActionPerformed
 
 
 
