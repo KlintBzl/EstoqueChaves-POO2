@@ -12,7 +12,7 @@ import javax.swing.table.*;
  *
  * @author Eder
  */
-public class ChaveDAO {
+public class ChaveUsadaDAO {
 
     Connection conexao = null;
     PreparedStatement pst = null;
