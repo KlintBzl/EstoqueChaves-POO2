@@ -50,6 +50,8 @@ public class telaChavesUsadas extends javax.swing.JFrame {
         txtQuantidadeUsadas = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela de gerenciamento de chaves usadas");
+        setResizable(false);
 
         jLabel3.setText("Quantidade:");
 
@@ -236,6 +238,7 @@ public class telaChavesUsadas extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tbChavesUsadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbChavesUsadasMouseClicked

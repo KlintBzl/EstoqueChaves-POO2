@@ -1,6 +1,8 @@
 
 package VIEW;
 
+import javax.swing.JOptionPane;
+
 public class telaPrincipal extends javax.swing.JFrame {
 
     public telaPrincipal() {
@@ -19,6 +21,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbChavesCadastradas = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbChavesCadastradas1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         BarraDeMenuPrincipal = new javax.swing.JMenuBar();
         MenuGer = new javax.swing.JMenu();
         menutitulocadastrar = new javax.swing.JMenuItem();
@@ -28,18 +33,24 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuUsada = new javax.swing.JMenuItem();
         SeparadorDeOpcao = new javax.swing.JPopupMenu.Separator();
         MenuAjudar = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        MenuSobrir = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        MenuOpicoes = new javax.swing.JMenuItem();
         MenuCadastrar = new javax.swing.JMenu();
         MenuUsuarios1 = new javax.swing.JMenuItem();
         MenuChaves1 = new javax.swing.JMenu();
         MenuVirgem1 = new javax.swing.JMenuItem();
         MenuUsada1 = new javax.swing.JMenuItem();
         MenuAjuda = new javax.swing.JMenu();
-        MenuSobre = new javax.swing.JMenu();
+        MenuSobre = new javax.swing.JMenuItem();
         MenuOpções = new javax.swing.JMenu();
+        MenuSair = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         btnvoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/voltar.png"))); // NOI18N
         btnvoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -92,6 +103,50 @@ public class telaPrincipal extends javax.swing.JFrame {
             tbChavesCadastradas.getColumnModel().getColumn(4).setResizable(false);
         }
 
+        tbChavesCadastradas1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Tipo", "Numeração", "C", "Quantidade"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tbChavesCadastradas1);
+        if (tbChavesCadastradas1.getColumnModel().getColumnCount() > 0) {
+            tbChavesCadastradas1.getColumnModel().getColumn(0).setResizable(false);
+            tbChavesCadastradas1.getColumnModel().getColumn(1).setResizable(false);
+            tbChavesCadastradas1.getColumnModel().getColumn(2).setResizable(false);
+            tbChavesCadastradas1.getColumnModel().getColumn(3).setResizable(false);
+            tbChavesCadastradas1.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        jLabel2.setText("Chaves Usadas em estoque");
+
         MenuGer.setText("Gerenciar");
         MenuGer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -133,6 +188,14 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuAjudar.setText("Ajuda");
         MenuGer.add(MenuAjudar);
+        MenuGer.add(jSeparator1);
+
+        MenuSobrir.setText("Sobre");
+        MenuGer.add(MenuSobrir);
+        MenuGer.add(jSeparator2);
+
+        MenuOpicoes.setText("Opções");
+        MenuGer.add(MenuOpicoes);
 
         BarraDeMenuPrincipal.add(MenuGer);
 
@@ -159,12 +222,22 @@ public class telaPrincipal extends javax.swing.JFrame {
         BarraDeMenuPrincipal.add(MenuCadastrar);
 
         MenuAjuda.setText("Ajuda");
-        BarraDeMenuPrincipal.add(MenuAjuda);
 
         MenuSobre.setText("Sobre");
-        BarraDeMenuPrincipal.add(MenuSobre);
+        MenuAjuda.add(MenuSobre);
+
+        BarraDeMenuPrincipal.add(MenuAjuda);
 
         MenuOpções.setText("Opções");
+
+        MenuSair.setText("Sair");
+        MenuSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSairActionPerformed(evt);
+            }
+        });
+        MenuOpções.add(MenuSair);
+
         BarraDeMenuPrincipal.add(MenuOpções);
 
         setJMenuBar(BarraDeMenuPrincipal);
@@ -173,27 +246,37 @@ public class telaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(214, 214, 214))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(btnvoltar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(214, 214, 214)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addComponent(btnvoltar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -233,6 +316,13 @@ public class telaPrincipal extends javax.swing.JFrame {
         chave.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_MenuVirgemActionPerformed
+
+    private void MenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSairActionPerformed
+        int sair = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja sair","Atenção",JOptionPane.YES_NO_OPTION);
+        if(sair == JOptionPane.YES_OPTION){
+            System.exit(sair);
+        }
+    }//GEN-LAST:event_MenuSairActionPerformed
 
 
 
@@ -281,8 +371,11 @@ public class telaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenu MenuChaves;
     public static javax.swing.JMenu MenuChaves1;
     public static javax.swing.JMenu MenuGer;
+    private javax.swing.JMenuItem MenuOpicoes;
     private javax.swing.JMenu MenuOpções;
-    private javax.swing.JMenu MenuSobre;
+    private javax.swing.JMenuItem MenuSair;
+    private javax.swing.JMenuItem MenuSobre;
+    private javax.swing.JMenuItem MenuSobrir;
     public static javax.swing.JMenuItem MenuUsada;
     private javax.swing.JMenuItem MenuUsada1;
     public static javax.swing.JMenuItem MenuUsuarios;
@@ -292,9 +385,14 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator SeparadorDeOpcao;
     private javax.swing.JButton btnvoltar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     public static javax.swing.JMenuItem menutitulocadastrar;
     public static javax.swing.JTable tbChavesCadastradas;
+    public static javax.swing.JTable tbChavesCadastradas1;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,9 +30,7 @@ public class UsuarioDAO {
                 if (perfil.equals("admin")) {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
-                    
-                    
-            
+                    conexao.close();
                 } else {
                     
                     telaPrincipal principal = new telaPrincipal();
@@ -41,10 +39,7 @@ public class UsuarioDAO {
                     telaPrincipal.MenuUsuarios1.setEnabled(false);
                     telaPrincipal.MenuChaves.setEnabled(false);
                     telaPrincipal.MenuChaves1.setEnabled(false);
-                    
-                    
-  
-
+                    conexao.close();
                 }
 
             } else {
