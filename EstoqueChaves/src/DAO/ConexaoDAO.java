@@ -11,7 +11,7 @@ public class ConexaoDAO {
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/estoquechaves";
         String user = "root";
-        String password = "#k123";
+        String password = "root";
         
         try{
             Class.forName(driver);
