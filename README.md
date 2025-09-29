@@ -1,16 +1,16 @@
-Estoque Chaves
+#### Estoque Chaves
 
-Este projeto é um sistema desenvolvido em **Java** com integração ao banco de dados **MySQL**, com o objetivo de gerenciar estoque,   
-Ele permite cadastrar computadores, registrar peças substituídas, controlar reparos e gerar relatórios de inventário.
+Este projeto é um sistema desenvolvido em **Java** com integração ao banco de dados **MySQL**, com o objetivo de gerenciar o estoque de chaves, virgens e usadas.   
+Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar estoque de chaves virgens e editar informações já colocadas no sistema.
 
 ---
 
 ## Funcionalidades
 
-- Cadastro de **máquinas** com informações detalhadas (número de patrimônio, laboratório, estado).
-- Registro de **manutenções**, incluindo peças substituídas e técnico responsável.
-- Controle de **inventário de peças** disponíveis e utilizadas.
-- Suporte a **múltiplos laboratórios**.
+- Cadastro de **chaves** com informações detalhadas (Tipo, numeração, quantidade).
+- Registro de **entradas e saídas** do caixa.
+- Controle de **inventário de chaves** disponíveis e utilizadas.
+- Suporte a **múltiplas oficinas**.
 - Controle de **usuários e permissões**.
 - Relatórios básicos para acompanhamento de atividades.
 
@@ -34,19 +34,28 @@ Ele permite cadastrar computadores, registrar peças substituídas, controlar re
 ├── dto/ # Objetos de transferência de dados
 
 ├── img/ # Imagens dos ícones
-└──  view/ # Interfaces gráficas (Swing)
 
+└──  view/ # Interfaces gráficas (Swing)
 
 ---
 
 ## Histórico de Atualizações
+- **v2.1.0** - (29/09/2025)
+  - Atualização de alguns ícones para melhor entendimento do usuário
+  - Ajustes nas inplementações de cadastro.
+  - Alterações das funções para melhor funcionamento do sistema.
+
+- **v2.0.0** - (24/09/2025)
+  - Segunda versão estável
+  - Implementação de novas telas para melhorar o gerenciamento das funções.
+  - Ajustes nos botões e atalhos
 
 - **v1.0.0** – (22/09/2025)  
   - Primeira versão estável.  
-  - Implementação de cadastro de máquinas e inventário.  
+  - Implementação de cadastro de chaves e usuários, sendo possível ralizar o login.  
 
 - **v0.3.0** – (15/09/2025)  
-  - Adição de relatórios básicos.  
+  - Adição de imagens para melhor interação com o usuário.  
   - Ajustes na interface gráfica.  
 
 - **v0.2.0** – (08/09/2025)  
@@ -60,13 +69,15 @@ Ele permite cadastrar computadores, registrar peças substituídas, controlar re
 ## Desenvolvedores
 
 Este projeto foi idealizado e desenvolvido por:  
-##  Integrante 1
-## Integrante 2
+## Klint Burzlaff Berta Lemes - 16 anos
+## Nicoly Marques Lemes - 17 anos
 
 
 ---
 
 ## Informações sobre o Banco de Dados usado
+
+O banco de dados usado é o SGDB, o banco de dados original tem o nome de "estoquechaves", mas é de sua opção mudá-lo, apenas tenha certeza que você atualizou as informações em 'ConexaoDAO' no pacote 'DAO'
 
 ---
 
