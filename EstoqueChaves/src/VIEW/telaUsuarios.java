@@ -178,7 +178,21 @@ public class telaUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
+        int id_usuario = Integer.parseInt(txtIdUsu.getText());
+        String nome_usuario = txtNomeUsu.getText();
+        String login_usuario = txtLoginUsu.getText();
+        String senha_usuario = txtSenhaUsu.getText();
+        String perfil_usuario = cboPerfilUsu.getSelectedItem().toString();
+
+        UsuarioDTO objusuarioDTO = new UsuarioDTO();
+        objusuarioDTO.setId_uauario(id_usuario);
+        objusuarioDTO.setNome_usuario(nome_usuario);
+        objusuarioDTO.setLogin_usuario(login_usuario);
+        objusuarioDTO.setSenha_usuario(senha_usuario);
+        objusuarioDTO.setPerfil_usuario(perfil_usuario);
+
+        UsuarioDAO objUsuarioDAO = new UsuarioDAO();
+        objUsuarioDAO.inserirUsuario(objusuarioDTO);
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed

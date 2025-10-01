@@ -17,22 +17,17 @@ public class telaHistorico extends javax.swing.JFrame {
     private void initComponents() {
 
         btnPesquisar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtid = new javax.swing.JTextField();
         txtdata = new javax.swing.JTextField();
         txthistorico = new javax.swing.JTextField();
         txtentrada = new javax.swing.JTextField();
         txtsaida = new javax.swing.JTextField();
-        txttotal = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
         btnPesquisar1 = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        btnApagar = new javax.swing.JButton();
         brnVoltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbHistorico = new javax.swing.JTable();
@@ -49,23 +44,13 @@ public class telaHistorico extends javax.swing.JFrame {
         setTitle("Tela de gerenciamento de histórico");
         setResizable(false);
 
-        jLabel1.setText("ID");
-
         jLabel2.setText("Data");
 
         jLabel3.setText("Histórico");
 
         jLabel4.setText("Entrada");
 
-        jLabel5.setText("Total");
-
         jLabel6.setText("Saída");
-
-        txtid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtidActionPerformed(evt);
-            }
-        });
 
         txthistorico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,12 +67,6 @@ public class telaHistorico extends javax.swing.JFrame {
         txtsaida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtsaidaActionPerformed(evt);
-            }
-        });
-
-        txttotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txttotalActionPerformed(evt);
             }
         });
 
@@ -114,15 +93,6 @@ public class telaHistorico extends javax.swing.JFrame {
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
-            }
-        });
-
-        btnApagar.setBackground(new java.awt.Color(191, 63, 65));
-        btnApagar.setForeground(new java.awt.Color(191, 63, 65));
-        btnApagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/limpar.png"))); // NOI18N
-        btnApagar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnApagarActionPerformed(evt);
             }
         });
 
@@ -169,41 +139,37 @@ public class telaHistorico extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(btnAdd)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnPesquisar1)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnEditar)
+                        .addGap(30, 30, 30)
+                        .addComponent(brnVoltar))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3))
-                                .addGap(23, 23, 23)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtid)
-                                    .addComponent(txtdata)
-                                    .addComponent(txthistorico, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
-                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txthistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(32, 32, 32)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel6)))
+                                    .addComponent(jLabel6))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtsaida, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtentrada, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txttotal, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(btnAdd)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnPesquisar1)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEditar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnApagar)
-                        .addGap(18, 18, 18)
-                        .addComponent(brnVoltar)))
+                                    .addComponent(txtsaida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                    .addComponent(txtentrada, javax.swing.GroupLayout.Alignment.LEADING))))))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -211,52 +177,35 @@ public class telaHistorico extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
                     .addComponent(jLabel4)
-                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtentrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtentrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtsaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtsaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txthistorico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(39, 39, 39)
+                    .addComponent(txthistorico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnEditar)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPesquisar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnApagar)
+                        .addComponent(btnPesquisar1))
                     .addComponent(brnVoltar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtidActionPerformed
-
     private void txtentradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtentradaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtentradaActionPerformed
-
-    private void txttotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttotalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txttotalActionPerformed
 
     private void txthistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthistoricoActionPerformed
         // TODO add your handling code here:
@@ -267,6 +216,29 @@ public class telaHistorico extends javax.swing.JFrame {
     }//GEN-LAST:event_txtsaidaActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        if(txtentrada.getText().equals("")){
+        String Data = txtdata.getText();
+        String Historico = txthistorico.getText();
+        Double Entrada = 0.0;
+        Double Saida = Double.parseDouble(txtsaida.getText());
+        Double Total = Total - Saida;
+
+        HistoricoDTO objHistoricoDTO = new HistoricoDTO();
+        objHistoricoDTO.setId(WIDTH);
+        objHistoricoDTO.setData(Data);
+        objHistoricoDTO.setHistorico(Historico);
+        objHistoricoDTO.setEntrada(Entrada);
+        objHistoricoDTO.setSaida(Saida);
+        objHistoricoDTO.setTotal(Total);
+
+        HistoricoDAO objHistoricoDAO = new HistoricoDAO();
+        objHistoricoDAO.inserirHistorico(objHistoricoDTO);
+            
+        }
+            
+        
+        
+        
         int id_historico = Integer.parseInt(txtid.getText());
         String Data = txtdata.getText();
         String Historico = txthistorico.getText();
@@ -322,15 +294,6 @@ public class telaHistorico extends javax.swing.JFrame {
         objHistoricoDAO.editar(objHistoricoDTO);
     }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
-       int id_historico = Integer.parseInt(txtid.getText());
-        HistoricoDTO objHistoricoDTO = new HistoricoDTO();
-        objHistoricoDTO.setId(id_historico);
-        
-        HistoricoDAO objHistoricoDAO = new HistoricoDAO();
-        objHistoricoDAO.deletar(objHistoricoDTO);
-    }//GEN-LAST:event_btnApagarActionPerformed
-
     private void brnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnVoltarActionPerformed
         telaPrincipal principal = new telaPrincipal();
         principal.setVisible(true);
@@ -375,23 +338,18 @@ public class telaHistorico extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton brnVoltar;
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnApagar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnPesquisar1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable tbHistorico;
     public static javax.swing.JTextField txtdata;
     public static javax.swing.JTextField txtentrada;
     public static javax.swing.JTextField txthistorico;
-    public static javax.swing.JTextField txtid;
     public static javax.swing.JTextField txtsaida;
-    public static javax.swing.JTextField txttotal;
     // End of variables declaration//GEN-END:variables
 }
