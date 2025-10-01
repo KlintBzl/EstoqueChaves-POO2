@@ -28,6 +28,17 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
               <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="MenuUsuarios">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Usuarios"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuUsuariosActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
+                </MenuItem>
                 <Menu class="javax.swing.JMenu" name="MenuChavesGer">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Chaves"/>
@@ -60,53 +71,40 @@
                     </MenuItem>
                   </SubComponents>
                 </Menu>
-                <MenuItem class="javax.swing.JMenuItem" name="MenuUsuarios">
+                <Menu class="javax.swing.JMenu" name="MenuHistoricoGer">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Usuarios"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuUsuariosActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                  </AuxValues>
-                </MenuItem>
-              </SubComponents>
-            </Menu>
-            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator3">
-            </MenuItem>
-            <Menu class="javax.swing.JMenu" name="MenuHistoricoGer">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Hist&#xf3;rico"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-              </AuxValues>
-              <SubComponents>
-                <Menu class="javax.swing.JMenu" name="MenuAdicionarHGer">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Adicionar"/>
+                    <Property name="text" type="java.lang.String" value="Hist&#xf3;ricos"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                   </AuxValues>
                   <SubComponents>
-                    <MenuItem class="javax.swing.JMenuItem" name="MenuEntradaHGer">
+                    <Menu class="javax.swing.JMenu" name="MenuAdicionarHGer">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Entrada"/>
+                        <Property name="text" type="java.lang.String" value="Adicionar"/>
                       </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                       </AuxValues>
-                    </MenuItem>
-                    <MenuItem class="javax.swing.JMenuItem" name="MenuSaidaHGer">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Sa&#xed;da"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                      </AuxValues>
-                    </MenuItem>
+                      <SubComponents>
+                        <MenuItem class="javax.swing.JMenuItem" name="MenuEntradaHGer">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Entrada"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
+                        </MenuItem>
+                        <MenuItem class="javax.swing.JMenuItem" name="MenuSaidaHGer">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Sa&#xed;da"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
+                        </MenuItem>
+                      </SubComponents>
+                    </Menu>
                   </SubComponents>
                 </Menu>
               </SubComponents>
@@ -194,31 +192,31 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="MenuHistorico">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Hist&#xf3;rico"/>
-          </Properties>
-          <SubComponents>
-            <Menu class="javax.swing.JMenu" name="MenuAdicionarH">
+            <Menu class="javax.swing.JMenu" name="MenuHistorico">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Adicionar"/>
+                <Property name="text" type="java.lang.String" value="Hist&#xf3;ricos"/>
               </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-              </AuxValues>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="MenuEntradaH">
+                <Menu class="javax.swing.JMenu" name="MenuAdicionarH">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Entrada"/>
+                    <Property name="text" type="java.lang.String" value="Adicionar"/>
                   </Properties>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="MenuSaidaH">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Sa&#xed;da"/>
-                  </Properties>
-                </MenuItem>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
+                  <SubComponents>
+                    <MenuItem class="javax.swing.JMenuItem" name="MenuEntradaH">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Entrada"/>
+                      </Properties>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="MenuSaidaH">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Sa&#xed;da"/>
+                      </Properties>
+                    </MenuItem>
+                  </SubComponents>
+                </Menu>
               </SubComponents>
             </Menu>
           </SubComponents>

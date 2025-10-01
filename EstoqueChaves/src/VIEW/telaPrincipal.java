@@ -30,11 +30,10 @@ public class telaPrincipal extends javax.swing.JFrame {
         BarraDeMenuPrincipal = new javax.swing.JMenuBar();
         MenuGer = new javax.swing.JMenu();
         MenuCadastrarGer = new javax.swing.JMenu();
+        MenuUsuarios = new javax.swing.JMenuItem();
         MenuChavesGer = new javax.swing.JMenu();
         MenuVirgemCGer = new javax.swing.JMenuItem();
         MenuUsadaCGer = new javax.swing.JMenuItem();
-        MenuUsuarios = new javax.swing.JMenuItem();
-        jSeparator3 = new javax.swing.JPopupMenu.Separator();
         MenuHistoricoGer = new javax.swing.JMenu();
         MenuAdicionarHGer = new javax.swing.JMenu();
         MenuEntradaHGer = new javax.swing.JMenuItem();
@@ -218,6 +217,14 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuCadastrarGer.setText("Cadastrar");
 
+        MenuUsuarios.setText("Usuarios");
+        MenuUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuUsuariosActionPerformed(evt);
+            }
+        });
+        MenuCadastrarGer.add(MenuUsuarios);
+
         MenuChavesGer.setText("Chaves");
 
         MenuVirgemCGer.setText("Virgem");
@@ -238,18 +245,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuCadastrarGer.add(MenuChavesGer);
 
-        MenuUsuarios.setText("Usuarios");
-        MenuUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuUsuariosActionPerformed(evt);
-            }
-        });
-        MenuCadastrarGer.add(MenuUsuarios);
-
-        MenuGer.add(MenuCadastrarGer);
-        MenuGer.add(jSeparator3);
-
-        MenuHistoricoGer.setText("Histórico");
+        MenuHistoricoGer.setText("Históricos");
 
         MenuAdicionarHGer.setText("Adicionar");
 
@@ -261,7 +257,9 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuHistoricoGer.add(MenuAdicionarHGer);
 
-        MenuGer.add(MenuHistoricoGer);
+        MenuCadastrarGer.add(MenuHistoricoGer);
+
+        MenuGer.add(MenuCadastrarGer);
         MenuGer.add(SeparadorDeOpcao);
 
         MenuAjudaGer.setText("Ajuda");
@@ -322,9 +320,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuCadastrar.add(MenuChaves1);
 
-        BarraDeMenuPrincipal.add(MenuCadastrar);
-
-        MenuHistorico.setText("Histórico");
+        MenuHistorico.setText("Históricos");
 
         MenuAdicionarH.setText("Adicionar");
 
@@ -336,7 +332,9 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuHistorico.add(MenuAdicionarH);
 
-        BarraDeMenuPrincipal.add(MenuHistorico);
+        MenuCadastrar.add(MenuHistorico);
+
+        BarraDeMenuPrincipal.add(MenuCadastrar);
 
         MenuAjuda.setText("Ajuda");
 
@@ -564,7 +562,6 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JPopupMenu.Separator jSeparator3;
     public static javax.swing.JTable jTable1;
     public static javax.swing.JTable tbChavesCadastradas;
     public static javax.swing.JTable tbChavesCadastradas1;
