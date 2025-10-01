@@ -36,8 +36,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuUsuarios = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         MenuHistoricoGer = new javax.swing.JMenu();
-        MenuCadastrarHGer = new javax.swing.JMenuItem();
-        MenuAbrirHGer = new javax.swing.JMenuItem();
+        MenuAdicionarHGer = new javax.swing.JMenu();
+        MenuEntradaHGer = new javax.swing.JMenuItem();
+        MenuSaidaHGer = new javax.swing.JMenuItem();
         SeparadorDeOpcao = new javax.swing.JPopupMenu.Separator();
         MenuAjudaGer = new javax.swing.JMenu();
         MenuSobreGer = new javax.swing.JMenuItem();
@@ -51,8 +52,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuVirgem1 = new javax.swing.JMenuItem();
         MenuUsada1 = new javax.swing.JMenuItem();
         MenuHistorico = new javax.swing.JMenu();
-        MenuCadastrarH = new javax.swing.JMenuItem();
-        MenuAbrirH = new javax.swing.JMenuItem();
+        MenuAdicionarH = new javax.swing.JMenu();
+        MenuEntradaH = new javax.swing.JMenuItem();
+        MenuSaidaH = new javax.swing.JMenuItem();
         MenuAjuda = new javax.swing.JMenu();
         MenuSobre = new javax.swing.JMenuItem();
         MenuOpções = new javax.swing.JMenu();
@@ -249,11 +251,15 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuHistoricoGer.setText("Histórico");
 
-        MenuCadastrarHGer.setText("Cadastrar");
-        MenuHistoricoGer.add(MenuCadastrarHGer);
+        MenuAdicionarHGer.setText("Adicionar");
 
-        MenuAbrirHGer.setText("Abrir");
-        MenuHistoricoGer.add(MenuAbrirHGer);
+        MenuEntradaHGer.setText("Entrada");
+        MenuAdicionarHGer.add(MenuEntradaHGer);
+
+        MenuSaidaHGer.setText("Saída");
+        MenuAdicionarHGer.add(MenuSaidaHGer);
+
+        MenuHistoricoGer.add(MenuAdicionarHGer);
 
         MenuGer.add(MenuHistoricoGer);
         MenuGer.add(SeparadorDeOpcao);
@@ -320,16 +326,15 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuHistorico.setText("Histórico");
 
-        MenuCadastrarH.setText("Cadastrar");
-        MenuHistorico.add(MenuCadastrarH);
+        MenuAdicionarH.setText("Adicionar");
 
-        MenuAbrirH.setText("Abrir");
-        MenuAbrirH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuAbrirHActionPerformed(evt);
-            }
-        });
-        MenuHistorico.add(MenuAbrirH);
+        MenuEntradaH.setText("Entrada");
+        MenuAdicionarH.add(MenuEntradaH);
+
+        MenuSaidaH.setText("Saída");
+        MenuAdicionarH.add(MenuSaidaH);
+
+        MenuHistorico.add(MenuAdicionarH);
 
         BarraDeMenuPrincipal.add(MenuHistorico);
 
@@ -480,10 +485,6 @@ public class telaPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_MenuSobreGerActionPerformed
 
-    private void MenuAbrirHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAbrirHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MenuAbrirHActionPerformed
-
 
 
 
@@ -525,21 +526,23 @@ public class telaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar BarraDeMenuPrincipal;
-    public static javax.swing.JMenuItem MenuAbrirH;
-    public static javax.swing.JMenuItem MenuAbrirHGer;
+    private javax.swing.JMenu MenuAdicionarH;
+    private javax.swing.JMenu MenuAdicionarHGer;
     public static javax.swing.JMenu MenuAjuda;
     private javax.swing.JMenu MenuAjudaGer;
     public static javax.swing.JMenu MenuCadastrar;
     public static javax.swing.JMenu MenuCadastrarGer;
-    public static javax.swing.JMenuItem MenuCadastrarH;
-    public static javax.swing.JMenuItem MenuCadastrarHGer;
     public static javax.swing.JMenu MenuChaves1;
     public static javax.swing.JMenu MenuChavesGer;
+    private javax.swing.JMenuItem MenuEntradaH;
+    private javax.swing.JMenuItem MenuEntradaHGer;
     public static javax.swing.JMenu MenuGer;
-    public static javax.swing.JMenu MenuHistorico;
+    private javax.swing.JMenu MenuHistorico;
     public static javax.swing.JMenu MenuHistoricoGer;
     private javax.swing.JMenu MenuOpcoesGer;
     public static javax.swing.JMenu MenuOpções;
+    private javax.swing.JMenuItem MenuSaidaH;
+    private javax.swing.JMenuItem MenuSaidaHGer;
     public static javax.swing.JMenuItem MenuSair;
     private javax.swing.JMenuItem MenuSairGer;
     public static javax.swing.JMenuItem MenuSobre;
