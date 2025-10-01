@@ -5,6 +5,9 @@
  */
 package VIEW;
 
+import DAO.UsuarioDAO;
+import DTO.UsuarioDTO;
+
 /**
  *
  * @author aluno.saolucas
@@ -41,7 +44,7 @@ public class telaUsuarios extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         btnApagar = new javax.swing.JButton();
         brnVoltar = new javax.swing.JButton();
-        cboPerfilUsu = new javax.swing.JComboBox<>();
+        cboperfil = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de gerenciamento de usuários");
@@ -99,7 +102,7 @@ public class telaUsuarios extends javax.swing.JFrame {
             }
         });
 
-        cboPerfilUsu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "user" }));
+        cboperfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "user" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,7 +121,7 @@ public class telaUsuarios extends javax.swing.JFrame {
                             .addComponent(txtid, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                             .addComponent(txtlogin)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cboPerfilUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboperfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
@@ -162,7 +165,7 @@ public class telaUsuarios extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(cboPerfilUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cboperfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnPesquisar)
@@ -178,18 +181,18 @@ public class telaUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        int id_usuario = Integer.parseInt(txtIdUsu.getText());
-        String nome_usuario = txtNomeUsu.getText();
-        String login_usuario = txtLoginUsu.getText();
-        String senha_usuario = txtSenhaUsu.getText();
-        String perfil_usuario = cboPerfilUsu.getSelectedItem().toString();
+        int id_usuario = Integer.parseInt(txtid.getText());
+        String nome_usuario = txtnome.getText();
+        String login_usuario = txtlogin.getText();
+        String senha_usuario = txtsenha.getText();
+        String perfil_usuario = cboperfil.getSelectedItem().toString();
 
         UsuarioDTO objusuarioDTO = new UsuarioDTO();
-        objusuarioDTO.setId_uauario(id_usuario);
-        objusuarioDTO.setNome_usuario(nome_usuario);
-        objusuarioDTO.setLogin_usuario(login_usuario);
-        objusuarioDTO.setSenha_usuario(senha_usuario);
-        objusuarioDTO.setPerfil_usuario(perfil_usuario);
+        objusuarioDTO.setID(id_usuario);
+        objusuarioDTO.setNome(nome_usuario);
+        objusuarioDTO.setLogin(login_usuario);
+        objusuarioDTO.setSenha(senha_usuario);
+        objusuarioDTO.setPerfil(perfil_usuario);
 
         UsuarioDAO objUsuarioDAO = new UsuarioDAO();
         objUsuarioDAO.inserirUsuario(objusuarioDTO);
@@ -254,7 +257,7 @@ public class telaUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton btnApagar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnPesquisar;
-    public static javax.swing.JComboBox<String> cboPerfilUsu;
+    public static javax.swing.JComboBox<String> cboperfil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

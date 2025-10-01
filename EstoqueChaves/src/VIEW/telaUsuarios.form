@@ -39,7 +39,7 @@
                           <Component id="txtid" pref="139" max="32767" attributes="0"/>
                           <Component id="txtlogin" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="cboPerfilUsu" min="-2" max="-2" attributes="0"/>
+                              <Component id="cboperfil" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -97,7 +97,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboPerfilUsu" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboperfil" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -217,7 +217,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brnVoltarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cboPerfilUsu">
+    <Component class="javax.swing.JComboBox" name="cboperfil">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
