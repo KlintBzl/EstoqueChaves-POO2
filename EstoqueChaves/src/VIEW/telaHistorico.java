@@ -5,6 +5,7 @@ import DAO.HistoricoDAO;
 import DTO.HistoricoDTO;
 import static VIEW.telaChaves.txtID;
 import static VIEW.telaChaves.txtTipo;
+import javax.swing.JOptionPane;
 
 public class telaHistorico extends javax.swing.JFrame {
 
@@ -249,43 +250,48 @@ public class telaHistorico extends javax.swing.JFrame {
         if(txtentrada.getText().equals("")){
         String Data = txtdata.getText();
         String Historico = txthistorico.getText();
-        Double Entrada = 0.0;
         Double Saida = Double.parseDouble(txtsaida.getText());
-        Double Total = Total - Saida;
-
+        Double Total =- Saida;
+        
+        if(Total > 0){
         HistoricoDTO objHistoricoDTO = new HistoricoDTO();
-        objHistoricoDTO.setId(WIDTH);
         objHistoricoDTO.setData(Data);
         objHistoricoDTO.setHistorico(Historico);
-        objHistoricoDTO.setEntrada(Entrada);
         objHistoricoDTO.setSaida(Saida);
         objHistoricoDTO.setTotal(Total);
-
+        
         HistoricoDAO objHistoricoDAO = new HistoricoDAO();
         objHistoricoDAO.inserirHistorico(objHistoricoDTO);
-            
+        }else{
+            int verificar = JOptionPane.showConfirmDialog(null, "Opa! Tem certeza que colocou o valor certo?"
+                    + " Você está tirando um número de dinheiro maio que o total!", "ERRO!", JOptionPane.YES_NO_OPTION);
+                    if(verificar == JOptionPane.YES_OPTION){
+                        HistoricoDTO objHistoricoDTO = new HistoricoDTO();
+                        objHistoricoDTO.setData(Data);
+                        objHistoricoDTO.setHistorico(Historico);
+                        objHistoricoDTO.setSaida(Saida);
+                        objHistoricoDTO.setTotal(Total);
+        
+                        HistoricoDAO objHistoricoDAO = new HistoricoDAO();
+                        objHistoricoDAO.inserirHistorico(objHistoricoDTO);
+
+                    }
         }
-            
         
-        
-        
-        int id_historico = Integer.parseInt(txtid.getText());
+        }else if(txtsaida.getText().equals("")){
         String Data = txtdata.getText();
         String Historico = txthistorico.getText();
         Double Entrada = Double.parseDouble(txtentrada.getText());
-        Double Saida = Double.parseDouble(txtsaida.getText());
-        Double Total = Double.parseDouble(txttotal.getText());
-
+        Double Total =+ Entrada;
         HistoricoDTO objHistoricoDTO = new HistoricoDTO();
-        objHistoricoDTO.setId(WIDTH);
         objHistoricoDTO.setData(Data);
         objHistoricoDTO.setHistorico(Historico);
         objHistoricoDTO.setEntrada(Entrada);
-        objHistoricoDTO.setSaida(Saida);
         objHistoricoDTO.setTotal(Total);
 
         HistoricoDAO objHistoricoDAO = new HistoricoDAO();
         objHistoricoDAO.inserirHistorico(objHistoricoDTO);
+        }
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
@@ -293,7 +299,7 @@ public class telaHistorico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisar1ActionPerformed
-        int id_historico = Integer.parseInt(txtid.getText());
+        int id_historico = Integer.parseInt(txtID.getText());
         String data = txtdata.getText();
         
 
@@ -305,7 +311,7 @@ public class telaHistorico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisar1ActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        int id_historico = Integer.parseInt(txtid.getText());
+        int id_historico = Integer.parseInt(txtID.getText());
         String data = txtdata.getText();
         String historico = txthistorico.getText();
         double entrada = Double.parseDouble(txtentrada.getText());
