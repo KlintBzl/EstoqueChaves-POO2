@@ -3,6 +3,8 @@ package VIEW;
 
 import DAO.HistoricoDAO;
 import DTO.HistoricoDTO;
+import static VIEW.telaChaves.txtID;
+import static VIEW.telaChaves.txtTipo;
 
 public class telaHistorico extends javax.swing.JFrame {
 
@@ -133,21 +135,31 @@ public class telaHistorico extends javax.swing.JFrame {
 
         tbHistorico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Data", "Histórico", "Entrada", "Saída", "Total"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tbHistorico);
         if (tbHistorico.getColumnModel().getColumnCount() > 0) {
-            tbHistorico.getColumnModel().getColumn(0).setHeaderValue("Title 1");
-            tbHistorico.getColumnModel().getColumn(1).setHeaderValue("Title 2");
-            tbHistorico.getColumnModel().getColumn(2).setHeaderValue("Title 3");
-            tbHistorico.getColumnModel().getColumn(3).setHeaderValue("Title 4");
+            tbHistorico.getColumnModel().getColumn(0).setResizable(false);
+            tbHistorico.getColumnModel().getColumn(1).setResizable(false);
+            tbHistorico.getColumnModel().getColumn(2).setResizable(false);
+            tbHistorico.getColumnModel().getColumn(3).setResizable(false);
+            tbHistorico.getColumnModel().getColumn(4).setResizable(false);
+            tbHistorico.getColumnModel().getColumn(5).setResizable(false);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -279,15 +291,44 @@ public class telaHistorico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisar1ActionPerformed
-        // TODO add your handling code here:
+        int id_historico = Integer.parseInt(txtid.getText());
+        String data = txtdata.getText();
+        
+
+        HistoricoDTO objHistoricoDTO = new HistoricoDTO();
+        objHistoricoDTO.setId(id_historico);
+        
+        HistoricoDAO objHistoricoDAO = new HistoricoDAO();
+        objHistoricoDAO.pesquisar(objHistoricoDTO);
     }//GEN-LAST:event_btnPesquisar1ActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        // TODO add your handling code here:
+        int id_historico = Integer.parseInt(txtid.getText());
+        String data = txtdata.getText();
+        String historico = txthistorico.getText();
+        double entrada = Double.parseDouble(txtentrada.getText());
+        double saida = Double.parseDouble(txtsaida.getText());
+        double total = Double.parseDouble(txttotal.getText());
+
+        HistoricoDTO objHistoricoDTO = new HistoricoDTO();
+        objHistoricoDTO.setId(id_historico);
+        objHistoricoDTO.setData(data);
+        objHistoricoDTO.setHistorico(historico);
+        objHistoricoDTO.setEntrada(entrada);
+        objHistoricoDTO.setSaida(saida);
+        objHistoricoDTO.setTotal(total);
+        
+        HistoricoDAO objHistoricoDAO = new HistoricoDAO();
+        objHistoricoDAO.editar(objHistoricoDTO);
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
-        // TODO add your handling code here:
+       int id_historico = Integer.parseInt(txtid.getText());
+        HistoricoDTO objHistoricoDTO = new HistoricoDTO();
+        objHistoricoDTO.setId(id_historico);
+        
+        HistoricoDAO objHistoricoDAO = new HistoricoDAO();
+        objHistoricoDAO.deletar(objHistoricoDTO);
     }//GEN-LAST:event_btnApagarActionPerformed
 
     private void brnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnVoltarActionPerformed
