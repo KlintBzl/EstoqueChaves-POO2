@@ -37,7 +37,7 @@ public class UsuarioDAO {
                     principal.setVisible(true);
                     telaPrincipal.MenuUsuarios.setEnabled(false);
                     telaPrincipal.MenuUsuarios1.setEnabled(false);
-                    telaPrincipal.MenuChaves.setEnabled(false);
+                    telaPrincipal.MenuChavesGer.setEnabled(false);
                     telaPrincipal.MenuChaves1.setEnabled(false);
                     conexao.close();
                 }

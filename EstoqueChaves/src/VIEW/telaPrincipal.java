@@ -31,23 +31,27 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuGer = new javax.swing.JMenu();
         menutitulocadastrar = new javax.swing.JMenuItem();
         MenuUsuarios = new javax.swing.JMenuItem();
-        MenuChaves = new javax.swing.JMenu();
-        MenuVirgem = new javax.swing.JMenuItem();
-        MenuUsada = new javax.swing.JMenuItem();
+        MenuChavesGer = new javax.swing.JMenu();
+        MenuVirgemCGer = new javax.swing.JMenuItem();
+        MenuUsadaCGer = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
-        MenuHistoricar = new javax.swing.JMenuItem();
+        MenuHistoricoGer = new javax.swing.JMenu();
+        MenuCadastrarHGer = new javax.swing.JMenuItem();
+        MenuAbrirHGer = new javax.swing.JMenuItem();
         SeparadorDeOpcao = new javax.swing.JPopupMenu.Separator();
-        MenuAjudar = new javax.swing.JMenuItem();
+        MenuAjudaGer = new javax.swing.JMenu();
+        MenuSobrar = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        MenuSobrir = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        MenuOpicoes = new javax.swing.JMenuItem();
+        MenuOpcoesGer = new javax.swing.JMenu();
         MenuCadastrar = new javax.swing.JMenu();
         MenuUsuarios1 = new javax.swing.JMenuItem();
         MenuChaves1 = new javax.swing.JMenu();
         MenuVirgem1 = new javax.swing.JMenuItem();
         MenuUsada1 = new javax.swing.JMenuItem();
         MenuHistorico = new javax.swing.JMenu();
+        MenuCadastrarH = new javax.swing.JMenuItem();
+        MenuAbrirH = new javax.swing.JMenuItem();
         MenuAjuda = new javax.swing.JMenu();
         MenuSobre = new javax.swing.JMenuItem();
         MenuOpções = new javax.swing.JMenu();
@@ -222,41 +226,49 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         MenuGer.add(MenuUsuarios);
 
-        MenuChaves.setText("Chaves");
+        MenuChavesGer.setText("Chaves");
 
-        MenuVirgem.setText("Virgem");
-        MenuVirgem.addActionListener(new java.awt.event.ActionListener() {
+        MenuVirgemCGer.setText("Virgem");
+        MenuVirgemCGer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuVirgemActionPerformed(evt);
+                MenuVirgemCGerActionPerformed(evt);
             }
         });
-        MenuChaves.add(MenuVirgem);
+        MenuChavesGer.add(MenuVirgemCGer);
 
-        MenuUsada.setText("Usada");
-        MenuUsada.addActionListener(new java.awt.event.ActionListener() {
+        MenuUsadaCGer.setText("Usada");
+        MenuUsadaCGer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuUsadaActionPerformed(evt);
+                MenuUsadaCGerActionPerformed(evt);
             }
         });
-        MenuChaves.add(MenuUsada);
+        MenuChavesGer.add(MenuUsadaCGer);
 
-        MenuGer.add(MenuChaves);
+        MenuGer.add(MenuChavesGer);
         MenuGer.add(jSeparator3);
 
-        MenuHistoricar.setText("Histórico");
-        MenuGer.add(MenuHistoricar);
+        MenuHistoricoGer.setText("Histórico");
+
+        MenuCadastrarHGer.setText("Cadastrar");
+        MenuHistoricoGer.add(MenuCadastrarHGer);
+
+        MenuAbrirHGer.setText("Abrir");
+        MenuHistoricoGer.add(MenuAbrirHGer);
+
+        MenuGer.add(MenuHistoricoGer);
         MenuGer.add(SeparadorDeOpcao);
 
-        MenuAjudar.setText("Ajuda");
-        MenuGer.add(MenuAjudar);
-        MenuGer.add(jSeparator1);
+        MenuAjudaGer.setText("Ajuda");
 
-        MenuSobrir.setText("Sobre");
-        MenuGer.add(MenuSobrir);
+        MenuSobrar.setText("Sobre");
+        MenuAjudaGer.add(MenuSobrar);
+
+        MenuGer.add(MenuAjudaGer);
+        MenuGer.add(jSeparator1);
         MenuGer.add(jSeparator2);
 
-        MenuOpicoes.setText("Opções");
-        MenuGer.add(MenuOpicoes);
+        MenuOpcoesGer.setText("Opções");
+        MenuGer.add(MenuOpcoesGer);
 
         BarraDeMenuPrincipal.add(MenuGer);
 
@@ -293,11 +305,23 @@ public class telaPrincipal extends javax.swing.JFrame {
         BarraDeMenuPrincipal.add(MenuCadastrar);
 
         MenuHistorico.setText("Histórico");
+
+        MenuCadastrarH.setText("Cadastrar");
+        MenuHistorico.add(MenuCadastrarH);
+
+        MenuAbrirH.setText("Abrir");
+        MenuHistorico.add(MenuAbrirH);
+
         BarraDeMenuPrincipal.add(MenuHistorico);
 
         MenuAjuda.setText("Ajuda");
 
         MenuSobre.setText("Sobre");
+        MenuSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSobreActionPerformed(evt);
+            }
+        });
         MenuAjuda.add(MenuSobre);
 
         BarraDeMenuPrincipal.add(MenuAjuda);
@@ -393,11 +417,11 @@ public class telaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menutitulocadastrarActionPerformed
 
-    private void MenuVirgemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuVirgemActionPerformed
+    private void MenuVirgemCGerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuVirgemCGerActionPerformed
         telaChaves chave = new telaChaves();
         chave.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuVirgemActionPerformed
+    }//GEN-LAST:event_MenuVirgemCGerActionPerformed
 
     private void MenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSairActionPerformed
         int sair = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja sair","Atenção",JOptionPane.YES_NO_OPTION);
@@ -412,17 +436,21 @@ public class telaPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_MenuVirgem1ActionPerformed
 
-    private void MenuUsadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsadaActionPerformed
+    private void MenuUsadaCGerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsadaCGerActionPerformed
         telaChavesUsadas chave = new telaChavesUsadas();
         chave.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuUsadaActionPerformed
+    }//GEN-LAST:event_MenuUsadaCGerActionPerformed
 
     private void MenuUsada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsada1ActionPerformed
         telaChavesUsadas chave = new telaChavesUsadas();
         chave.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_MenuUsada1ActionPerformed
+
+    private void MenuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSobreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuSobreActionPerformed
 
 
 
@@ -465,25 +493,29 @@ public class telaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar BarraDeMenuPrincipal;
+    private javax.swing.JMenuItem MenuAbrirH;
+    private javax.swing.JMenuItem MenuAbrirHGer;
     private javax.swing.JMenu MenuAjuda;
-    private javax.swing.JMenuItem MenuAjudar;
+    private javax.swing.JMenu MenuAjudaGer;
     private javax.swing.JMenu MenuCadastrar;
-    public static javax.swing.JMenu MenuChaves;
+    private javax.swing.JMenuItem MenuCadastrarH;
+    private javax.swing.JMenuItem MenuCadastrarHGer;
     public static javax.swing.JMenu MenuChaves1;
+    public static javax.swing.JMenu MenuChavesGer;
     public static javax.swing.JMenu MenuGer;
-    private javax.swing.JMenuItem MenuHistoricar;
     private javax.swing.JMenu MenuHistorico;
-    private javax.swing.JMenuItem MenuOpicoes;
+    private javax.swing.JMenu MenuHistoricoGer;
+    private javax.swing.JMenu MenuOpcoesGer;
     private javax.swing.JMenu MenuOpções;
     private javax.swing.JMenuItem MenuSair;
+    private javax.swing.JMenuItem MenuSobrar;
     private javax.swing.JMenuItem MenuSobre;
-    private javax.swing.JMenuItem MenuSobrir;
-    public static javax.swing.JMenuItem MenuUsada;
     private javax.swing.JMenuItem MenuUsada1;
+    public static javax.swing.JMenuItem MenuUsadaCGer;
     public static javax.swing.JMenuItem MenuUsuarios;
     public static javax.swing.JMenuItem MenuUsuarios1;
-    public static javax.swing.JMenuItem MenuVirgem;
     private javax.swing.JMenuItem MenuVirgem1;
+    public static javax.swing.JMenuItem MenuVirgemCGer;
     private javax.swing.JPopupMenu.Separator SeparadorDeOpcao;
     private javax.swing.JButton btnvoltar;
     private javax.swing.JLabel jLabel1;
