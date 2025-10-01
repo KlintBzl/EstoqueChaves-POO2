@@ -43,8 +43,8 @@ public class UsuarioDAO {
                     telaPrincipal.MenuUsuarios1.setEnabled(false);
                     telaPrincipal.MenuChavesGer.setEnabled(false);
                     telaPrincipal.MenuChaves1.setEnabled(false);
-                    telaPrincipal.MenuCadastrarH.setEnabled(false);
-                    telaPrincipal.MenuCadastrarHGer.setEnabled(false);
+                    telaPrincipal.MenuAdicionarH.setEnabled(false);
+                    telaPrincipal.MenuAdicionarHGer.setEnabled(false);
                     conexao.close();
                 }
 

@@ -29,8 +29,8 @@ public class telaInformacoes extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblLink = new javax.swing.JLabel();
         lblVoltar = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sobre");
@@ -40,10 +40,6 @@ public class telaInformacoes extends javax.swing.JFrame {
 
         jLabel2.setText("Caso esteja, você pode pegar as informações necessárias no seguinte link: ");
 
-        lblLink.setForeground(new java.awt.Color(50, 50, 250));
-        lblLink.setText("https://github.com/KlintBzl/EstoqueChaves-POO2/blob/main/README.md");
-        lblLink.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
         lblVoltar.setText("Voltar");
         lblVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -51,6 +47,11 @@ public class telaInformacoes extends javax.swing.JFrame {
                 lblVoltarMouseClicked(evt);
             }
         });
+
+        jTextField1.setEditable(false);
+        jTextField1.setForeground(new java.awt.Color(50, 50, 250));
+        jTextField1.setText("https://github.com/KlintBzl/EstoqueChaves-POO2/blob/main/README.md");
+        jTextField1.setBorder(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,15 +62,16 @@ public class telaInformacoes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(lblLink))
                             .addComponent(jLabel2)
                             .addComponent(lblVoltar)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(176, 176, 176)
                         .addComponent(jLabel1)))
                 .addContainerGap(9, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,11 +80,11 @@ public class telaInformacoes extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
+                .addGap(10, 10, 10)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblLink)
-                .addGap(18, 18, 18)
                 .addComponent(lblVoltar)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,7 +135,7 @@ public class telaInformacoes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lblLink;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblVoltar;
     // End of variables declaration//GEN-END:variables
 }
