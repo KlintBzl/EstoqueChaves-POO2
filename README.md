@@ -40,6 +40,10 @@ Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar
 ---
 
 ## Histórico de Atualizações
+- **v3.0.0** - (01/10/2025)
+  - Criação das classes de histórico DTO e DAO, além de uma tela para cadastro e edição do mesmo
+  - 
+
 - **v2.2.0** - (29/09/2025)
   - Adição dos métodos de verificação de historico
   - melhora na organização dos botões principais
@@ -80,15 +84,16 @@ Este projeto foi idealizado e desenvolvido por:
 ## Klint Burzlaff Berta Lemes - 16 anos
 ## Nicoly Marques Lemes - 17 anos
 
-
 ---
 
 ## Informações sobre o Banco de Dados usado
 
 O banco de dados usado é o SGDB, o banco de dados original tem o nome de "estoquechaves", mas é de sua opção mudá-lo, apenas tenha certeza que você atualizou as informações em 'ConexaoDAO' no pacote 'DAO'
 
----
+Caso não saiba como começar, temos um Prompt disponível que você pode acessar:
+(https://docs.google.com/document/d/1TyN46ldqZWO7lPA0_PCgpV3fyp2Td0RUUTEVml7acvI/edit?usp=sharing)
 
+---
 
 ## Licença
 
