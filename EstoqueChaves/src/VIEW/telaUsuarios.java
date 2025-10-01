@@ -199,7 +199,21 @@ public class telaUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        // TODO add your handling code here:
+       int id_usuario = Integer.parseInt(txtid.getText());
+        String nome_usuario = txtnome.getText();
+        String login_usuario = txtlogin.getText();
+        String senha_usuario = txtsenha.getText();
+        String perfil_usuario = cboperfil.getSelectedItem().toString();
+
+        UsuarioDTO objusuarioDTO = new UsuarioDTO();
+        objusuarioDTO.setID(id_usuario);
+        objusuarioDTO.setNome(nome_usuario);
+        objusuarioDTO.setLogin(login_usuario);
+        objusuarioDTO.setSenha(senha_usuario);
+        objusuarioDTO.setPerfil(perfil_usuario);
+
+        UsuarioDAO objUsuarioDAO = new UsuarioDAO();
+        objUsuarioDAO.editar(objusuarioDTO);
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void brnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnVoltarActionPerformed
@@ -209,11 +223,30 @@ public class telaUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_brnVoltarActionPerformed
 
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
-        // TODO add your handling code here:
+        int id_usuario = Integer.parseInt(txtid.getText());
+        UsuarioDTO objusuarioDTO = new UsuarioDTO();
+        objusuarioDTO.setID(id_usuario);
+        
+        UsuarioDAO objUsuarioDAO = new UsuarioDAO();
+        objUsuarioDAO.deletar(objusuarioDTO);
     }//GEN-LAST:event_btnApagarActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
-        // TODO add your handling code here:
+        int id_usuario = Integer.parseInt(txtid.getText());
+        String nome_usuario = txtnome.getText();
+        String login_usuario = txtlogin.getText();
+        String senha_usuario = txtsenha.getText();
+        String perfil_usuario = cboperfil.getSelectedItem().toString();
+
+        UsuarioDTO objusuarioDTO = new UsuarioDTO();
+        objusuarioDTO.setID(id_usuario);
+        objusuarioDTO.setNome(nome_usuario);
+        objusuarioDTO.setLogin(login_usuario);
+        objusuarioDTO.setSenha(senha_usuario);
+        objusuarioDTO.setPerfil(perfil_usuario);
+
+        UsuarioDAO objUsuarioDAO = new UsuarioDAO();
+        objUsuarioDAO.pesquisar(objusuarioDTO);
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     /**
