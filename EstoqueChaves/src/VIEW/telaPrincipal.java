@@ -519,8 +519,8 @@ public class telaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenu MenuChavesGer;
     private javax.swing.JMenuItem MenuEntradaH;
     public static javax.swing.JMenu MenuGer;
-    private javax.swing.JMenu MenuHistorico;
-    private javax.swing.JMenuItem MenuHistoricoGer;
+    public static javax.swing.JMenu MenuHistorico;
+    public static javax.swing.JMenuItem MenuHistoricoGer;
     private javax.swing.JMenu MenuOpcoesGer;
     public static javax.swing.JMenu MenuOpções;
     private javax.swing.JMenuItem MenuSaidaH;
