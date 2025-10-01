@@ -36,9 +36,12 @@
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtid" max="32767" attributes="0"/>
+                          <Component id="txtid" pref="139" max="32767" attributes="0"/>
                           <Component id="txtlogin" max="32767" attributes="0"/>
-                          <Component id="txtperfil" pref="133" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="cboPerfilUsu" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -93,20 +96,18 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtperfil" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboPerfilUsu" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="btnPesquisar" max="32767" attributes="0"/>
-                      <Component id="btnAdd" max="32767" attributes="0"/>
-                      <Component id="btnEditar" alignment="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="btnApagar" min="-2" max="-2" attributes="0"/>
-                  <Component id="brnVoltar" alignment="1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnPesquisar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnApagar" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="brnVoltar" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="167" max="32767" attributes="0"/>
+              <EmptySpace pref="77" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -144,8 +145,6 @@
     <Component class="javax.swing.JTextField" name="txtlogin">
     </Component>
     <Component class="javax.swing.JTextField" name="txtsenha">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtperfil">
     </Component>
     <Component class="javax.swing.JButton" name="btnAdd">
       <Properties>
@@ -217,6 +216,20 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brnVoltarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboPerfilUsu">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="admin"/>
+            <StringItem index="1" value="user"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
