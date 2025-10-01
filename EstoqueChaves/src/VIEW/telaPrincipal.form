@@ -43,6 +43,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Hist&#xf3;ricos"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </MenuItem>
                 <Menu class="javax.swing.JMenu" name="MenuChavesGer">
                   <Properties>
@@ -165,6 +168,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hist&#xf3;ricos"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
               <SubComponents>
                 <Menu class="javax.swing.JMenu" name="MenuAdicionarH">
                   <Properties>
