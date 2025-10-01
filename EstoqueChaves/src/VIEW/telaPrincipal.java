@@ -223,6 +223,11 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuCadastrarGer.add(MenuUsuarios);
 
         MenuHistoricoGer.setText("Históricos");
+        MenuHistoricoGer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuHistoricoGerActionPerformed(evt);
+            }
+        });
         MenuCadastrarGer.add(MenuHistoricoGer);
 
         MenuChavesGer.setText("Chaves");
@@ -468,6 +473,12 @@ public class telaPrincipal extends javax.swing.JFrame {
         info.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_MenuSobreGerActionPerformed
+
+    private void MenuHistoricoGerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuHistoricoGerActionPerformed
+        telaHistorico historico = new telaHistorico();
+        historico.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_MenuHistoricoGerActionPerformed
 
 
 

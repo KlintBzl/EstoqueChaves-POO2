@@ -141,6 +141,11 @@ public class telaHistorico extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tbHistorico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbHistoricoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbHistorico);
         if (tbHistorico.getColumnModel().getColumnCount() > 0) {
             tbHistorico.getColumnModel().getColumn(0).setResizable(false);
@@ -340,6 +345,24 @@ public class telaHistorico extends javax.swing.JFrame {
     private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtidActionPerformed
+
+    private void tbHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbHistoricoMouseClicked
+        int linhaSel = tbHistorico.getSelectedRow();
+            if(linhaSel != -1 ){
+            String id = tbHistorico.getValueAt(linhaSel, 0).toString();
+            String data = tbHistorico.getValueAt(linhaSel, 1).toString();
+            String historico = tbHistorico.getValueAt(linhaSel, 2).toString();
+            String entrada = tbHistorico.getValueAt(linhaSel, 3).toString();
+            String saida = tbHistorico.getValueAt(linhaSel, 4).toString();
+            String total = tbHistorico.getValueAt(linhaSel, 5).toString();
+            
+            txtid.setText(id);
+            txtdata.setText(data);
+            txthistorico.setText(historico);
+            txtentrada.setText(entrada);
+            txtsaida.setText(saida);
+            txttotal.setText(total);
+        }    }//GEN-LAST:event_tbHistoricoMouseClicked
 
     /**
      * @param args the command line arguments

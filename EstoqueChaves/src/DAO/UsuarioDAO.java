@@ -2,12 +2,9 @@ package DAO;
 
 import DAO.ConexaoDAO;
 import DTO.UsuarioDTO;
-import VIEW.telaLogin;
 import VIEW.telaPrincipal;
-import java.awt.Color;
 import java.sql.*;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 public class UsuarioDAO {
 
