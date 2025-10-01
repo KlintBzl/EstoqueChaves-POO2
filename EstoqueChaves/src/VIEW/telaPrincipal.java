@@ -526,8 +526,8 @@ public class telaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar BarraDeMenuPrincipal;
-    private javax.swing.JMenu MenuAdicionarH;
-    private javax.swing.JMenu MenuAdicionarHGer;
+    public static javax.swing.JMenu MenuAdicionarH;
+    public static javax.swing.JMenu MenuAdicionarHGer;
     public static javax.swing.JMenu MenuAjuda;
     private javax.swing.JMenu MenuAjudaGer;
     public static javax.swing.JMenu MenuCadastrar;
@@ -535,14 +535,14 @@ public class telaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenu MenuChaves1;
     public static javax.swing.JMenu MenuChavesGer;
     private javax.swing.JMenuItem MenuEntradaH;
-    private javax.swing.JMenuItem MenuEntradaHGer;
+    public static javax.swing.JMenuItem MenuEntradaHGer;
     public static javax.swing.JMenu MenuGer;
     private javax.swing.JMenu MenuHistorico;
     public static javax.swing.JMenu MenuHistoricoGer;
     private javax.swing.JMenu MenuOpcoesGer;
     public static javax.swing.JMenu MenuOpções;
     private javax.swing.JMenuItem MenuSaidaH;
-    private javax.swing.JMenuItem MenuSaidaHGer;
+    public static javax.swing.JMenuItem MenuSaidaHGer;
     public static javax.swing.JMenuItem MenuSair;
     private javax.swing.JMenuItem MenuSairGer;
     public static javax.swing.JMenuItem MenuSobre;
