@@ -84,7 +84,6 @@ Este projeto foi idealizado e desenvolvido por:
 ## Klint Burzlaff Berta Lemes - 16 anos
 ## Nicoly Marques Lemes - 17 anos
 
-
 ---
 
 ## Informações sobre o Banco de Dados usado
@@ -96,7 +95,6 @@ Caso não saiba como começar, temos um Prompt disponível que você pode acessa
 (https://docs.google.com/document/d/1TyN46ldqZWO7lPA0_PCgpV3fyp2Td0RUUTEVml7acvI/edit?usp=sharing)
 
 ---
-
 
 ## Licença
 
