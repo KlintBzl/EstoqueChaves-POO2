@@ -5,6 +5,7 @@ import DAO.HistoricoDAO;
 import DTO.HistoricoDTO;
 import static VIEW.telaChaves.txtID;
 import static VIEW.telaChaves.txtTipo;
+import javax.swing.JOptionPane;
 
 public class telaHistorico extends javax.swing.JFrame {
 
@@ -221,19 +222,33 @@ public class telaHistorico extends javax.swing.JFrame {
         String Historico = txthistorico.getText();
         Double Entrada = 0.0;
         Double Saida = Double.parseDouble(txtsaida.getText());
-        Double Total = Total - Saida;
-
+        Double Total =- Saida;
+        
+        if(Total > 0){
         HistoricoDTO objHistoricoDTO = new HistoricoDTO();
-        objHistoricoDTO.setId(WIDTH);
         objHistoricoDTO.setData(Data);
         objHistoricoDTO.setHistorico(Historico);
-        objHistoricoDTO.setEntrada(Entrada);
         objHistoricoDTO.setSaida(Saida);
         objHistoricoDTO.setTotal(Total);
-
+        
         HistoricoDAO objHistoricoDAO = new HistoricoDAO();
         objHistoricoDAO.inserirHistorico(objHistoricoDTO);
-            
+        }else{
+            int verificar = JOptionPane.showConfirmDialog(null, "Opa! Tem certeza que colocou o valor certo?"
+                    + " Você está tirando um número de dinheiro maio que o total!", "ERRO!", JOptionPane.YES_NO_OPTION);
+                    if(verificar == JOptionPane.YES_OPTION){
+                        HistoricoDTO objHistoricoDTO = new HistoricoDTO();
+                        objHistoricoDTO.setData(Data);
+                        objHistoricoDTO.setHistorico(Historico);
+                        objHistoricoDTO.setSaida(Saida);
+                        objHistoricoDTO.setTotal(Total);
+        
+                        HistoricoDAO objHistoricoDAO = new HistoricoDAO();
+                        objHistoricoDAO.inserirHistorico(objHistoricoDTO);
+
+                    }
+        }
+        
         }
             
         
