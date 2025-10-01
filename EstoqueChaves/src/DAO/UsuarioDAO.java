@@ -2,6 +2,7 @@ package DAO;
 
 import DAO.ConexaoDAO;
 import DTO.UsuarioDTO;
+import VIEW.telaLogin;
 import VIEW.telaPrincipal;
 import java.awt.Color;
 import java.sql.*;
@@ -30,7 +31,10 @@ public class UsuarioDAO {
                 if (perfil.equals("admin")) {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
-                    conexao.close();
+                    
+                    
+                    
+                    
                 } else {
                     
                     telaPrincipal principal = new telaPrincipal();
@@ -39,6 +43,8 @@ public class UsuarioDAO {
                     telaPrincipal.MenuUsuarios1.setEnabled(false);
                     telaPrincipal.MenuChavesGer.setEnabled(false);
                     telaPrincipal.MenuChaves1.setEnabled(false);
+                    telaPrincipal.MenuCadastrarH.setEnabled(false);
+                    telaPrincipal.MenuCadastrarHGer.setEnabled(false);
                     conexao.close();
                 }
 

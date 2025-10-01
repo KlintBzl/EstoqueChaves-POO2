@@ -154,6 +154,9 @@ public class telaLogin extends javax.swing.JFrame {
 
         UsuarioDAO objUsuarioDAO = new UsuarioDAO();
         objUsuarioDAO.logar(objUsuarioDTO);
+        this.dispose();
+        
+        txtSenha.setText("");
         
         
     }//GEN-LAST:event_btnloginActionPerformed
