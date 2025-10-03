@@ -1,15 +1,24 @@
 
 package VIEW;
 
+import DAO.ChaveDAO;
+import DAO.ChaveUsadaDAO;
+import DAO.HistoricoDAO;
+import static VIEW.telaChaves.*;
+import static VIEW.telaChavesUsadas.*;
+import static VIEW.telaHistorico.*;
 import javax.swing.JOptionPane;
 
 public class telaPrincipal extends javax.swing.JFrame {
 
     public telaPrincipal() {
         initComponents();
-        
-        
-        
+        HistoricoDAO historicotb = new HistoricoDAO();
+        historicotb.tabelarH();
+        ChaveDAO chaveV = new ChaveDAO();
+        chaveV.TabelarV();
+        ChaveUsadaDAO chaveU = new ChaveUsadaDAO();
+        chaveU.TabelarU();
     }
 
     @SuppressWarnings("unchecked")
@@ -20,13 +29,13 @@ public class telaPrincipal extends javax.swing.JFrame {
         btnvoltar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbChavesCadastradas = new javax.swing.JTable();
+        tbChavesCVirgens = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tbChavesCadastradas1 = new javax.swing.JTable();
+        tbChavesCUsadas = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbHistoricoEeS = new javax.swing.JTable();
         BarraDeMenuPrincipal = new javax.swing.JMenuBar();
         MenuGer = new javax.swing.JMenu();
         MenuCadastrarGer = new javax.swing.JMenu();
@@ -68,7 +77,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Chaves Virgens em estoque");
 
-        tbChavesCadastradas.setModel(new javax.swing.table.DefaultTableModel(
+        tbChavesCVirgens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -101,16 +110,21 @@ public class telaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tbChavesCadastradas);
-        if (tbChavesCadastradas.getColumnModel().getColumnCount() > 0) {
-            tbChavesCadastradas.getColumnModel().getColumn(0).setResizable(false);
-            tbChavesCadastradas.getColumnModel().getColumn(1).setResizable(false);
-            tbChavesCadastradas.getColumnModel().getColumn(2).setResizable(false);
-            tbChavesCadastradas.getColumnModel().getColumn(3).setResizable(false);
-            tbChavesCadastradas.getColumnModel().getColumn(4).setResizable(false);
+        tbChavesCVirgens.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbChavesCVirgensMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tbChavesCVirgens);
+        if (tbChavesCVirgens.getColumnModel().getColumnCount() > 0) {
+            tbChavesCVirgens.getColumnModel().getColumn(0).setResizable(false);
+            tbChavesCVirgens.getColumnModel().getColumn(1).setResizable(false);
+            tbChavesCVirgens.getColumnModel().getColumn(2).setResizable(false);
+            tbChavesCVirgens.getColumnModel().getColumn(3).setResizable(false);
+            tbChavesCVirgens.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        tbChavesCadastradas1.setModel(new javax.swing.table.DefaultTableModel(
+        tbChavesCUsadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -143,13 +157,18 @@ public class telaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tbChavesCadastradas1);
-        if (tbChavesCadastradas1.getColumnModel().getColumnCount() > 0) {
-            tbChavesCadastradas1.getColumnModel().getColumn(0).setResizable(false);
-            tbChavesCadastradas1.getColumnModel().getColumn(1).setResizable(false);
-            tbChavesCadastradas1.getColumnModel().getColumn(2).setResizable(false);
-            tbChavesCadastradas1.getColumnModel().getColumn(3).setResizable(false);
-            tbChavesCadastradas1.getColumnModel().getColumn(4).setResizable(false);
+        tbChavesCUsadas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbChavesCUsadasMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tbChavesCUsadas);
+        if (tbChavesCUsadas.getColumnModel().getColumnCount() > 0) {
+            tbChavesCUsadas.getColumnModel().getColumn(0).setResizable(false);
+            tbChavesCUsadas.getColumnModel().getColumn(1).setResizable(false);
+            tbChavesCUsadas.getColumnModel().getColumn(2).setResizable(false);
+            tbChavesCUsadas.getColumnModel().getColumn(3).setResizable(false);
+            tbChavesCUsadas.getColumnModel().getColumn(4).setResizable(false);
         }
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -158,48 +177,54 @@ public class telaPrincipal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setText("Histórico de entradas e saídas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbHistoricoEeS.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Data", "Historico", "Entradas", "Saídas", "Total"
+                "ID", "Data", "Historico", "Entradas", "Saídas", "Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        tbHistoricoEeS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbHistoricoEeSMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tbHistoricoEeS);
+        if (tbHistoricoEeS.getColumnModel().getColumnCount() > 0) {
+            tbHistoricoEeS.getColumnModel().getColumn(0).setResizable(false);
+            tbHistoricoEeS.getColumnModel().getColumn(1).setResizable(false);
+            tbHistoricoEeS.getColumnModel().getColumn(2).setResizable(false);
+            tbHistoricoEeS.getColumnModel().getColumn(3).setResizable(false);
+            tbHistoricoEeS.getColumnModel().getColumn(4).setResizable(false);
+            tbHistoricoEeS.getColumnModel().getColumn(5).setResizable(false);
         }
 
         MenuGer.setText("Gerenciar");
@@ -395,15 +420,15 @@ public class telaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltarActionPerformed
-        this.dispose();
         telaLogin login = new telaLogin();
         login.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnvoltarActionPerformed
 
     private void MenuUsuarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuarios1ActionPerformed
         telaUsuarios usuarios = new telaUsuarios();
         usuarios.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_MenuUsuarios1ActionPerformed
 
     private void MenuGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuGerMouseClicked
@@ -413,13 +438,13 @@ public class telaPrincipal extends javax.swing.JFrame {
     private void MenuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuariosActionPerformed
         telaUsuarios usuarios = new telaUsuarios();
         usuarios.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_MenuUsuariosActionPerformed
 
     private void MenuVirgemCGerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuVirgemCGerActionPerformed
         telaChaves chave = new telaChaves();
         chave.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_MenuVirgemCGerActionPerformed
 
     private void MenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSairActionPerformed
@@ -432,19 +457,19 @@ public class telaPrincipal extends javax.swing.JFrame {
     private void MenuVirgem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuVirgem1ActionPerformed
         telaChaves chave = new telaChaves();
         chave.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_MenuVirgem1ActionPerformed
 
     private void MenuUsadaCGerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsadaCGerActionPerformed
         telaChavesUsadas chave = new telaChavesUsadas();
         chave.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_MenuUsadaCGerActionPerformed
 
     private void MenuUsada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsada1ActionPerformed
         telaChavesUsadas chave = new telaChavesUsadas();
         chave.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_MenuUsada1ActionPerformed
 
     private void MenuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSobreActionPerformed
@@ -462,28 +487,74 @@ public class telaPrincipal extends javax.swing.JFrame {
     private void MenuSobreGerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSobreGerActionPerformed
         telaInformacoes info = new telaInformacoes();
         info.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_MenuSobreGerActionPerformed
 
     private void MenuHistoricoGerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuHistoricoGerActionPerformed
         telaHistorico historico = new telaHistorico();
         historico.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_MenuHistoricoGerActionPerformed
 
     private void MenuHistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuHistoricoActionPerformed
         telaHistorico historico = new telaHistorico();
         historico.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_MenuHistoricoActionPerformed
 
+    private void tbChavesCVirgensMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbChavesCVirgensMouseClicked
+        int linhaSel = tbChavesCVirgens.getSelectedRow();
+        if(linhaSel != -1 ){
+            String id_chaves = tbChavesCVirgens.getValueAt(linhaSel, 0).toString();
+            String tipo = tbChavesCVirgens.getValueAt(linhaSel, 1).toString();
+            String numeracao = tbChavesCVirgens.getValueAt(linhaSel, 2).toString();
+            String C = tbChavesCVirgens.getValueAt(linhaSel, 3).toString();
+            String quantidade = tbChavesCVirgens.getValueAt(linhaSel, 4).toString();
+            
+            txtID.setText(id_chaves);
+            txtTipo.setText(tipo);
+            txtNumeracao.setText(numeracao);
+            txtC.setText(C);
+            txtQuantidade.setText(quantidade);
+        }
+    }//GEN-LAST:event_tbChavesCVirgensMouseClicked
 
+    private void tbHistoricoEeSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbHistoricoEeSMouseClicked
+        int linhaSel = tbHistoricoEeS.getSelectedRow();
+            if(linhaSel != -1 ){
+            String id = tbHistoricoEeS.getValueAt(linhaSel, 0).toString();
+            String data = tbHistoricoEeS.getValueAt(linhaSel, 1).toString();
+            String historico = tbHistoricoEeS.getValueAt(linhaSel, 2).toString();
+            String entrada = tbHistoricoEeS.getValueAt(linhaSel, 3).toString();
+            String saida = tbHistoricoEeS.getValueAt(linhaSel, 4).toString();
+            String total = tbHistoricoEeS.getValueAt(linhaSel, 5).toString();
+            
+            txtid.setText(id);
+            txtdata.setText(data);
+            txthistorico.setText(historico);
+            txtentrada.setText(entrada);
+            txtsaida.setText(saida);
+            txttotal.setText(total);
+        }
+    }//GEN-LAST:event_tbHistoricoEeSMouseClicked
 
+    private void tbChavesCUsadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbChavesCUsadasMouseClicked
+        int linhaSel = tbChavesCUsadas.getSelectedRow();
+        if(linhaSel != -1 ){
+            String id_chaves = tbChavesCUsadas.getValueAt(linhaSel, 0).toString();
+            String tipo = tbChavesCUsadas.getValueAt(linhaSel, 1).toString();
+            String numeracao = tbChavesCUsadas.getValueAt(linhaSel, 2).toString();
+            String C = tbChavesCUsadas.getValueAt(linhaSel, 3).toString();
+            String quantidade = tbChavesCUsadas.getValueAt(linhaSel, 4).toString();
 
+            txtIDUsadas.setText(id_chaves);
+            txtTipoUsadas.setText(tipo);
+            txtNumeracaoUsadas.setText(numeracao);
+            txtCUsadas.setText(C);
+            txtQuantidadeUsadas.setText(quantidade);
+        }
+    }//GEN-LAST:event_tbChavesCUsadasMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -550,8 +621,8 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
-    public static javax.swing.JTable jTable1;
-    public static javax.swing.JTable tbChavesCadastradas;
-    public static javax.swing.JTable tbChavesCadastradas1;
+    public static javax.swing.JTable tbChavesCUsadas;
+    public static javax.swing.JTable tbChavesCVirgens;
+    public static javax.swing.JTable tbHistoricoEeS;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,7 @@ package DTO;
 public class ChaveDTO {
     
     private int id, numeracao, C, quantidade;
-    private String tipo;
+    private String tipo, marca;
 
     public int getId() {
         return id;
@@ -35,6 +35,14 @@ public class ChaveDTO {
     }
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
     
     

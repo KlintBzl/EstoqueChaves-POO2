@@ -3,6 +3,7 @@ package DAO;
 import DAO.ConexaoDAO;
 import DTO.HistoricoDTO;
 import VIEW.telaHistorico;
+import VIEW.telaPrincipal;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -29,7 +30,7 @@ public class HistoricoDAO {
             pst.setString(3, objHistoricoDTO.getHistorico());
             pst.setDouble(4, objHistoricoDTO.getEntrada());
             pst.setDouble(5, objHistoricoDTO.getSaida());
-            pst.setDouble(5, objHistoricoDTO.getTotal());
+            pst.setDouble(6, objHistoricoDTO.getTotal());
             int add  = pst.executeUpdate();
             if (add > 0) {
                 pesquisaAuto();
@@ -149,4 +150,28 @@ public class HistoricoDAO {
         telaHistorico.txttotal.setText(null);
     }
 
+    public void tabelarH() {
+        String sql = "select * from tb_historicos";
+        conexao = ConexaoDAO.conector();
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            rs = pst.executeQuery();
+            DefaultTableModel model = (DefaultTableModel) telaPrincipal.tbHistoricoEeS.getModel();
+            model.setNumRows(0);
+
+            while (rs.next()) {
+                int id = rs.getInt("id_historico");
+                String data = rs.getString("data");
+                String historico = rs.getString("historico");
+                double entrada = rs.getDouble("entrada");
+                double saida = rs.getDouble("saida");
+                double total = rs.getDouble("total");
+                model.addRow(new Object[]{id, data, historico, entrada, saida, total});
+            }
+            conexao.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, " Método Pesquisar Automático " + e);
+        }
+    }
 }

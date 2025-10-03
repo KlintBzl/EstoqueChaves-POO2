@@ -3,6 +3,7 @@ package DAO;
 import DAO.ConexaoDAO;
 import DTO.ChaveDTO;
 import VIEW.telaChaves;
+import VIEW.telaPrincipal;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -146,4 +147,28 @@ public class ChaveDAO {
         telaChaves.txtQuantidade.setText(null);
     }
 
+    public void TabelarV() {
+        String sql = "select * from tb_chaves";
+        conexao = ConexaoDAO.conector();
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            rs = pst.executeQuery();
+            DefaultTableModel model = (DefaultTableModel) telaPrincipal.tbChavesCVirgens.getModel();
+            model.setNumRows(0);
+
+            while (rs.next()) {
+                int id = rs.getInt("id_chaves");
+                String tipo = rs.getString("tipo");
+                int numeracao = rs.getInt("numeracao");
+                int C = rs.getInt("C");
+                int quantidade = rs.getInt("quantidade");
+                model.addRow(new Object[]{id, tipo, numeracao, C, quantidade});
+            }
+            conexao.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, " Método Pesquisar Automático " + e);
+        }
+    }
+    
 }

@@ -249,7 +249,7 @@ public class telaHistorico extends javax.swing.JFrame {
     }//GEN-LAST:event_txtsaidaActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        if(txtentrada.getText().equals("")){
+        if(txtentrada.getText().equals("0")){
         String Data = txtdata.getText();
         String Historico = txthistorico.getText();
         Double Saida = Double.parseDouble(txtsaida.getText());
@@ -280,7 +280,7 @@ public class telaHistorico extends javax.swing.JFrame {
                     }
         }
         
-        }else if(txtsaida.getText().equals("")){
+        }else if(txtsaida.getText().equals("0")){
         String Data = txtdata.getText();
         String Historico = txthistorico.getText();
         Double Entrada = Double.parseDouble(txtentrada.getText());
@@ -362,6 +362,7 @@ public class telaHistorico extends javax.swing.JFrame {
             txtentrada.setText(entrada);
             txtsaida.setText(saida);
             txttotal.setText(total);
+            
         }    }//GEN-LAST:event_tbHistoricoMouseClicked
 
     /**

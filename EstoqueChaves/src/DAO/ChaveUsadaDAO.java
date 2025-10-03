@@ -2,7 +2,8 @@ package DAO;
 
 import DAO.ConexaoDAO;
 import DTO.ChaveDTO;
-import VIEW.telaChaves;
+import VIEW.telaChavesUsadas;
+import VIEW.telaPrincipal;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -20,7 +21,7 @@ public class ChaveUsadaDAO {
 
 
     public void inserirUsuario(ChaveDTO objChaveDTO) {
-        String sql = "insert into tb_chaves (id_chaves, tipo, numeracao, C, quantidade)"
+        String sql = "insert into tb_chavesUsadas (id_chaves, marca, tipo, numeracao, C, quantidade)"
                 + " values (?, ?, ?, ?, ?)";
         conexao = ConexaoDAO.conector();
         
@@ -28,10 +29,11 @@ public class ChaveUsadaDAO {
         try {
             pst = conexao.prepareStatement(sql);
             pst.setInt(1, objChaveDTO.getId());
-            pst.setString(2, objChaveDTO.getTipo());
-            pst.setInt(3, objChaveDTO.getNumeracao());
-            pst.setInt(4, objChaveDTO.getC());
-            pst.setInt(5, objChaveDTO.getQuantidade());
+            pst.setString(2, objChaveDTO.getMarca());
+            pst.setString(3, objChaveDTO.getTipo());
+            pst.setInt(4, objChaveDTO.getNumeracao());
+            pst.setInt(5, objChaveDTO.getC());
+            pst.setInt(6, objChaveDTO.getQuantidade());
             int add  = pst.executeUpdate();
             if (add > 0) {
                 pesquisaAuto();
@@ -47,7 +49,7 @@ public class ChaveUsadaDAO {
     }
 
     public void pesquisar(ChaveDTO objChaveDTO) {
-        String sql = "select * from tb_chaves where id_chaves = ?";
+        String sql = "select * from tb_chavesUsadas where id_chaves = ?";
         conexao = ConexaoDAO.conector();
 
         try {
@@ -55,10 +57,11 @@ public class ChaveUsadaDAO {
             pst.setInt(1, objChaveDTO.getId());
             rs = pst.executeQuery();
             if (rs.next()) {
-                telaChaves.txtTipo.setText(rs.getString(2));
-                telaChaves.txtNumeracao.setText(rs.getString(3));
-                telaChaves.txtC.setText(rs.getString(4));
-                telaChaves.txtQuantidade.setText(rs.getString(5));
+                telaChavesUsadas.txtMarca.setText(rs.getString(2));
+                telaChavesUsadas.txtTipoUsadas.setText(rs.getString(3));
+                telaChavesUsadas.txtNumeracaoUsadas.setText(rs.getString(4));
+                telaChavesUsadas.txtCUsadas.setText(rs.getString(5));
+                telaChavesUsadas.txtQuantidadeUsadas.setText(rs.getString(6));
                 conexao.close();
             } else {
                 JOptionPane.showMessageDialog(null, "Chave não cadastrada!");
@@ -71,22 +74,23 @@ public class ChaveUsadaDAO {
     }
 
     public void pesquisaAuto() {
-        String sql = "select * from tb_chaves";
+        String sql = "select * from tb_chavesUsadas";
         conexao = ConexaoDAO.conector();
 
         try {
             pst = conexao.prepareStatement(sql);
             rs = pst.executeQuery();
-            DefaultTableModel model = (DefaultTableModel) telaChaves.tbChaves.getModel();
+            DefaultTableModel model = (DefaultTableModel) telaChavesUsadas.tbChavesUsadas.getModel();
             model.setNumRows(0);
 
             while (rs.next()) {
                 int id = rs.getInt("id_chaves");
+                String marca = rs.getString("marca");
                 String tipo = rs.getString("tipo");
                 int numeracao = rs.getInt("numeracao");
                 int C = rs.getInt("C");
                 int quantidade = rs.getInt("quantidade");
-                model.addRow(new Object[]{id, tipo, numeracao, C, quantidade});
+                model.addRow(new Object[]{id, marca, tipo, numeracao, C, quantidade});
             }
             conexao.close();
         } catch (Exception e) {
@@ -96,11 +100,12 @@ public class ChaveUsadaDAO {
 
     //Método editar
     public void editar(ChaveDTO objChaveDTO) {
-        String sql = "update tb_chaves set tipo = ?, numeracao = ?, C = ?, quantidade = ? where id_chaves = ?";
+        String sql = "update tb_chavesUsadas set marca = ?, tipo = ?, numeracao = ?, C = ?, quantidade = ? where id_chaves = ?";
         conexao = ConexaoDAO.conector();
         try {
             pst = conexao.prepareStatement(sql);
-            pst.setInt(5, objChaveDTO.getId());
+            pst.setInt(6, objChaveDTO.getId());
+            pst.setString(5, objChaveDTO.getMarca());
             pst.setString(4, objChaveDTO.getTipo());
             pst.setInt(3, objChaveDTO.getNumeracao());
             pst.setInt(2, objChaveDTO.getC());
@@ -119,7 +124,7 @@ public class ChaveUsadaDAO {
 
     //Método deletar
     public void deletar(ChaveDTO objChaveDTO) {
-        String sql = "delete from tb_chaves where id_chaves = ?";
+        String sql = "delete from tb_chavesUsadas where id_chaves = ?";
         conexao = ConexaoDAO.conector();
 
         try {
@@ -139,11 +144,37 @@ public class ChaveUsadaDAO {
     }
 
     public void limparCampos() {
-        telaChaves.txtID.setText(null);
-        telaChaves.txtTipo.setText(null);
-        telaChaves.txtNumeracao.setText(null);
-        telaChaves.txtC.setText(null);
-        telaChaves.txtQuantidade.setText(null);
+        telaChavesUsadas.txtIDUsadas.setText(null);
+        telaChavesUsadas.txtMarca.setText(null);
+        telaChavesUsadas.txtTipoUsadas.setText(null);
+        telaChavesUsadas.txtNumeracaoUsadas.setText(null);
+        telaChavesUsadas.txtCUsadas.setText(null);
+        telaChavesUsadas.txtQuantidadeUsadas.setText(null);
     }
 
+    public void TabelarU() {
+        String sql = "select * from tb_chavesUsadas";
+        conexao = ConexaoDAO.conector();
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            rs = pst.executeQuery();
+            DefaultTableModel model = (DefaultTableModel) telaPrincipal.tbChavesCUsadas.getModel();
+            model.setNumRows(0);
+
+            while (rs.next()) {
+                int id = rs.getInt("id_chaves");
+                String marca = rs.getString("marca");
+                String tipo = rs.getString("tipo");
+                int numeracao = rs.getInt("numeracao");
+                int C = rs.getInt("C");
+                int quantidade = rs.getInt("quantidade");
+                model.addRow(new Object[]{id, marca, tipo, numeracao, C, quantidade});
+            }
+            conexao.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, " Método Pesquisar Automático " + e);
+        }
+    }
+    
 }
