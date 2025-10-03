@@ -1,6 +1,6 @@
 #### Estoque Chaves
 
-Este projeto é um sistema desenvolvido em **Java** com integração ao banco de dados **MySQL**, com o objetivo de gerenciar o estoque de chaves, virgens e usadas.   
+Este projeto é um sistema desenvolvido em **Java** com integração ao banco de dados **MySQL**, com o objetivo de gerenciar um estoque de chaves, virgens e usadas, mantendo um histórico de entradas e saídas de dinheiro.   
 Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar estoque de chaves virgens e editar informações já colocadas no sistema.
 
 ---
@@ -40,13 +40,17 @@ Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar
 ---
 
 ## Histórico de Atualizações
+- **v4.0.0** - (13/10/2025)
+  - Versão final da estrutura.
+  - idealização de pequenas coisas que melhorariam a interatividade com o usuário.
+
 - **v3.0.0** - (01/10/2025)
-  - Criação das classes de histórico DTO e DAO, além de uma tela para cadastro e edição do mesmo
-  - 
+  - Criação das classes de histórico DTO e DAO, além de uma tela para cadastro e edição do mesmo.
+  - melhora dos métodos de histórico.
 
 - **v2.2.0** - (29/09/2025)
-  - Adição dos métodos de verificação de historico
-  - melhora na organização dos botões principais
+  - Adição dos métodos de verificação de histórico.
+  - melhora na organização dos botões principais.
 
 - **v2.1.1** - (29/09/2025)
   - Adição de botões aperfeiçoados, melhorados e mais amplos.
