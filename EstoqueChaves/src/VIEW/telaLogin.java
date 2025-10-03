@@ -6,7 +6,6 @@ import DAO.UsuarioDAO;
 import DTO.UsuarioDTO;
 import java.sql.Connection;
 import javax.swing.ImageIcon;
-import java.awt.*;
 
 public class telaLogin extends javax.swing.JFrame {
 
