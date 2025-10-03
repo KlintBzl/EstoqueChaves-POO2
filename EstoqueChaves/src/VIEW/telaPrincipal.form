@@ -141,6 +141,17 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MenuHistorico">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hist&#xf3;ricos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuHistoricoActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
+            </MenuItem>
             <Menu class="javax.swing.JMenu" name="MenuChaves1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Chaves"/>
@@ -165,36 +176,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuUsada1ActionPerformed"/>
                   </Events>
                 </MenuItem>
-              </SubComponents>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="MenuHistorico">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Hist&#xf3;ricos"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-              </AuxValues>
-              <SubComponents>
-                <Menu class="javax.swing.JMenu" name="MenuAdicionarH">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Adicionar"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                  </AuxValues>
-                  <SubComponents>
-                    <MenuItem class="javax.swing.JMenuItem" name="MenuEntradaH">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Entrada"/>
-                      </Properties>
-                    </MenuItem>
-                    <MenuItem class="javax.swing.JMenuItem" name="MenuSaidaH">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Sa&#xed;da"/>
-                      </Properties>
-                    </MenuItem>
-                  </SubComponents>
-                </Menu>
               </SubComponents>
             </Menu>
           </SubComponents>

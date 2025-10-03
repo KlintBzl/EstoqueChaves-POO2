@@ -3,8 +3,10 @@ package DAO;
 import DAO.ConexaoDAO;
 import DTO.UsuarioDTO;
 import VIEW.telaPrincipal;
+import VIEW.telaUsuarios;
 import java.sql.*;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class UsuarioDAO {
 
@@ -21,19 +23,18 @@ public class UsuarioDAO {
             pst = conexao.prepareStatement(sql);
             pst.setString(1, objusuarioDTO.getLogin());
             pst.setString(2, objusuarioDTO.getSenha());
-
             rs = pst.executeQuery();
+
             if (rs.next()) {
+
                 String perfil = rs.getString(5);
+
                 if (perfil.equals("admin")) {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
                     
-                    
-                    
-                    
+                    conexao.close();                   
                 } else {
-                    
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
                     telaPrincipal.MenuUsuarios.setEnabled(false);
@@ -42,7 +43,8 @@ public class UsuarioDAO {
                     telaPrincipal.MenuChaves1.setEnabled(false);
                     telaPrincipal.MenuHistorico.setEnabled(false);
                     telaPrincipal.MenuHistoricoGer.setEnabled(false);
-                    conexao.close();
+                    conexao.close(); 
+
                 }
 
             } else {
@@ -89,7 +91,10 @@ public class UsuarioDAO {
             pst.setInt(1, objUsuarioDTO.getID());
             rs = pst.executeQuery();
             if (rs.next()) {
-
+                telaUsuarios.txtnome.setText(rs.getString(2));
+                telaUsuarios.txtlogin.setText(rs.getString(3));
+                telaUsuarios.txtsenha.setText(rs.getString(4));
+                telaUsuarios.cboperfil.setSelectedItem(rs.getString(5));
                 conexao.close();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não cadastrado!");
@@ -108,7 +113,8 @@ public class UsuarioDAO {
         try {
             pst = conexao.prepareStatement(sql);
             rs = pst.executeQuery();
-
+            DefaultTableModel model = (DefaultTableModel) telaUsuarios.tbUsuarios.getModel();
+            model.setNumRows(0);
 
             while (rs.next()) {
                 int id = rs.getInt("id_usuario");
@@ -116,7 +122,7 @@ public class UsuarioDAO {
                 String login = rs.getString("login");
                 String senha = rs.getString("senha");
                 String perfil = rs.getString("perfil");
-
+                model.addRow(new Object[]{id, nome, login, senha, perfil});
             }
             conexao.close();
         } catch (Exception e) {
@@ -169,7 +175,11 @@ public class UsuarioDAO {
     }
 
     public void limparCampos() {
-        
+        telaUsuarios.txtid.setText(null);
+        telaUsuarios.txtlogin.setText(null);
+        telaUsuarios.txtnome.setText(null);
+        telaUsuarios.txtsenha.setText(null);
+        telaUsuarios.cboperfil.setSelectedItem(1);
     }
 
 }
