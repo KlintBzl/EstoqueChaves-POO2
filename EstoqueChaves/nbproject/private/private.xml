@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaLogin.java</file>
-            <file>file:/C:/Users/Aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaUsuarios.java</file>
-            <file>file:/C:/Users/Aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telacadastrar.java</file>
-            <file>file:/C:/Users/Aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaPrincipal.java</file>
-            <file>file:/C:/Users/Aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaInformacoes.java</file>
-            <file>file:/C:/Users/Aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaChaves.java</file>
-            <file>file:/C:/Users/Aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaHistorico.java</file>
-=======
-            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaHistorico.java</file>
-            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/DAO/UsuarioDAO.java</file>
-            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/DAO/HistoricoDAO.java</file>
-            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaPrincipal.java</file>
-            <file>file:/C:/Users/aluno.saolucas/Documents/EstoqueChaves-POO2/EstoqueChaves/src/VIEW/telaUsuarios.java</file>
->>>>>>> 0f09397254ce642831d5ac8964ac75a1bf80798d
-        </group>
+        <group/>
     </open-files>
 </project-private>
