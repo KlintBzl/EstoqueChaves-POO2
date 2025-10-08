@@ -29,13 +29,13 @@ public class telaChavesUsadas extends javax.swing.JFrame {
         lblTipo = new javax.swing.JLabel();
         lblNumeracao = new javax.swing.JLabel();
         txtIDUsadas = new javax.swing.JTextField();
-        txtTipoUsadas = new javax.swing.JTextField();
         txtNumeracaoUsadas = new javax.swing.JTextField();
         txtCUsadas = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtQuantidadeUsadas = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtMarca = new javax.swing.JTextField();
+        cboTipo = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de gerenciamento de chaves usadas");
@@ -134,6 +134,8 @@ public class telaChavesUsadas extends javax.swing.JFrame {
 
         jLabel4.setText("Marca:");
 
+        cboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yale", "Gorje", "Tetra" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,8 +153,9 @@ public class telaChavesUsadas extends javax.swing.JFrame {
                                 .addComponent(txtIDUsadas, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(99, 99, 99))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtTipoUsadas, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
+                                .addGap(13, 13, 13)
+                                .addComponent(cboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtMarca)
@@ -160,7 +163,7 @@ public class telaChavesUsadas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblNumeracao)
                         .addGap(18, 18, 18)
-                        .addComponent(txtNumeracaoUsadas)
+                        .addComponent(txtNumeracaoUsadas, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)))
@@ -182,7 +185,7 @@ public class telaChavesUsadas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnPesquisarChave)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                         .addComponent(btnEditarChave)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEliminarChave)
@@ -213,10 +216,10 @@ public class telaChavesUsadas extends javax.swing.JFrame {
                                         .addComponent(btnLimpar)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtTipoUsadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblTipo)
                                     .addComponent(jLabel4)
-                                    .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(btnAddChave)
                             .addComponent(btnPesquisarChave)
                             .addComponent(btnEditarChave))
@@ -242,47 +245,35 @@ public class telaChavesUsadas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tbChavesUsadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbChavesUsadasMouseClicked
-        int linhaSel = tbChavesUsadas.getSelectedRow();
-        if(linhaSel != -1 ){
-            String id_chaves = tbChavesUsadas.getValueAt(linhaSel, 0).toString();
-            String tipo = tbChavesUsadas.getValueAt(linhaSel, 1).toString();
-            String numeracao = tbChavesUsadas.getValueAt(linhaSel, 2).toString();
-            String C = tbChavesUsadas.getValueAt(linhaSel, 3).toString();
-            String quantidade = tbChavesUsadas.getValueAt(linhaSel, 4).toString();
 
-            txtIDUsadas.setText(id_chaves);
-            txtTipoUsadas.setText(tipo);
-            txtNumeracaoUsadas.setText(numeracao);
-            txtCUsadas.setText(C);
-            txtQuantidadeUsadas.setText(quantidade);
-        }
     }//GEN-LAST:event_tbChavesUsadasMouseClicked
 
     private void btnAddChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddChaveActionPerformed
 
         int id_chaves = Integer.parseInt(txtIDUsadas.getText());
-        String tipo = txtTipoUsadas.getText();
+        String tipo = cboTipo.getSelectedItem().toString();
+        String marca = txtMarca.getText();
         int numeracao = Integer.parseInt(txtNumeracaoUsadas.getText());
         int C = Integer.parseInt(txtCUsadas.getText());
         int quantidade = Integer.parseInt(txtQuantidadeUsadas.getText());
 
         ChaveDTO objChaveDTO = new ChaveDTO();
         objChaveDTO.setId(id_chaves);
+        objChaveDTO.setMarca(marca);
         objChaveDTO.setTipo(tipo);
         objChaveDTO.setNumeracao(numeracao);
         objChaveDTO.setC(C);
         objChaveDTO.setQuantidade(quantidade);
 
         ChaveUsadaDAO objChaveDAO = new ChaveUsadaDAO();
-        objChaveDAO.inserirUsuario(objChaveDTO);
+        objChaveDAO.inserirChave(objChaveDTO);
     }//GEN-LAST:event_btnAddChaveActionPerformed
 
     private void btnPesquisarChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarChaveActionPerformed
-        int id_chaves = Integer.parseInt(txtIDUsadas.getText());
-        String tipo = txtTipoUsadas.getText();
+        int numeracao = Integer.parseInt(txtNumeracaoUsadas.getText());
 
         ChaveDTO objChaveDTO = new ChaveDTO();
-        objChaveDTO.setId(id_chaves);
+        objChaveDTO.setNumeracao(numeracao);
 
         ChaveUsadaDAO objChaveDAO = new ChaveUsadaDAO();
         objChaveDAO.pesquisar(objChaveDTO);
@@ -290,7 +281,8 @@ public class telaChavesUsadas extends javax.swing.JFrame {
 
     private void btnEditarChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarChaveActionPerformed
         int id_chaves = Integer.parseInt(txtIDUsadas.getText());
-        String tipo = txtTipoUsadas.getText();
+        String tipo = cboTipo.getSelectedItem().toString();
+        String marca = txtMarca.getText();
         int numeracao = Integer.parseInt(txtNumeracaoUsadas.getText());
         int C = Integer.parseInt(txtCUsadas.getText());
         int quantidade = Integer.parseInt(txtQuantidadeUsadas.getText());
@@ -298,6 +290,7 @@ public class telaChavesUsadas extends javax.swing.JFrame {
         ChaveDTO objChaveDTO = new ChaveDTO();
         objChaveDTO.setId(id_chaves);
         objChaveDTO.setTipo(tipo);
+        objChaveDTO.setMarca(marca);
         objChaveDTO.setNumeracao(numeracao);
         objChaveDTO.setC(C);
         objChaveDTO.setQuantidade(quantidade);
@@ -368,6 +361,7 @@ public class telaChavesUsadas extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnPesquisarChave;
     private javax.swing.JButton btnVoltar;
+    public static javax.swing.JComboBox<String> cboTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -381,6 +375,5 @@ public class telaChavesUsadas extends javax.swing.JFrame {
     public static javax.swing.JTextField txtMarca;
     public static javax.swing.JTextField txtNumeracaoUsadas;
     public static javax.swing.JTextField txtQuantidadeUsadas;
-    public static javax.swing.JTextField txtTipoUsadas;
     // End of variables declaration//GEN-END:variables
 }

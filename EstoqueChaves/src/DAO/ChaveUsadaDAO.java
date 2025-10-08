@@ -20,9 +20,9 @@ public class ChaveUsadaDAO {
     ResultSet rs = null;
 
 
-    public void inserirUsuario(ChaveDTO objChaveDTO) {
+    public void inserirChave(ChaveDTO objChaveDTO) {
         String sql = "insert into tb_chavesUsadas (id_chaves, marca, tipo, numeracao, C, quantidade)"
-                + " values (?, ?, ?, ?, ?)";
+                + " values (?, ?, ?, ?, ?, ?)";
         conexao = ConexaoDAO.conector();
         
         
@@ -49,19 +49,19 @@ public class ChaveUsadaDAO {
     }
 
     public void pesquisar(ChaveDTO objChaveDTO) {
-        String sql = "select * from tb_chavesUsadas where id_chaves = ?";
+        String sql = "select * from tb_chavesUsadas where numeracao = ?";
         conexao = ConexaoDAO.conector();
 
         try {
             pst = conexao.prepareStatement(sql);
-            pst.setInt(1, objChaveDTO.getId());
+            pst.setInt(1, objChaveDTO.getNumeracao());
             rs = pst.executeQuery();
             if (rs.next()) {
-                telaChavesUsadas.txtMarca.setText(rs.getString(2));
-                telaChavesUsadas.txtTipoUsadas.setText(rs.getString(3));
-                telaChavesUsadas.txtNumeracaoUsadas.setText(rs.getString(4));
-                telaChavesUsadas.txtCUsadas.setText(rs.getString(5));
-                telaChavesUsadas.txtQuantidadeUsadas.setText(rs.getString(6));
+                telaChavesUsadas.txtIDUsadas.setText(rs.getString("id_chaves"));
+                telaChavesUsadas.txtMarca.setText(rs.getString("marca"));
+                telaChavesUsadas.cboTipo.setSelectedItem(rs.getString("tipo"));
+                telaChavesUsadas.txtCUsadas.setText(rs.getString("C"));
+                telaChavesUsadas.txtQuantidadeUsadas.setText(rs.getString("quantidade"));
                 conexao.close();
             } else {
                 JOptionPane.showMessageDialog(null, "Chave não cadastrada!");
@@ -103,13 +103,12 @@ public class ChaveUsadaDAO {
         String sql = "update tb_chavesUsadas set marca = ?, tipo = ?, numeracao = ?, C = ?, quantidade = ? where id_chaves = ?";
         conexao = ConexaoDAO.conector();
         try {
-            pst = conexao.prepareStatement(sql);
+            pst.setString(1, objChaveDTO.getMarca());       
+            pst.setString(2, objChaveDTO.getTipo());        
+            pst.setInt(3, objChaveDTO.getNumeracao());      
+            pst.setInt(4, objChaveDTO.getC());              
+            pst.setInt(5, objChaveDTO.getQuantidade());     
             pst.setInt(6, objChaveDTO.getId());
-            pst.setString(5, objChaveDTO.getMarca());
-            pst.setString(4, objChaveDTO.getTipo());
-            pst.setInt(3, objChaveDTO.getNumeracao());
-            pst.setInt(2, objChaveDTO.getC());
-            pst.setInt(1, objChaveDTO.getQuantidade());
             int add = pst.executeUpdate();
             if (add > 0) {
                 JOptionPane.showMessageDialog(null, "Chave editada com sucesso!");
@@ -146,7 +145,6 @@ public class ChaveUsadaDAO {
     public void limparCampos() {
         telaChavesUsadas.txtIDUsadas.setText(null);
         telaChavesUsadas.txtMarca.setText(null);
-        telaChavesUsadas.txtTipoUsadas.setText(null);
         telaChavesUsadas.txtNumeracaoUsadas.setText(null);
         telaChavesUsadas.txtCUsadas.setText(null);
         telaChavesUsadas.txtQuantidadeUsadas.setText(null);

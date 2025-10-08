@@ -317,20 +317,6 @@ public class telaChaves extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void tbChavesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbChavesMouseClicked
-        int linhaSel = tbChaves.getSelectedRow();
-        if(linhaSel != -1 ){
-            String id_chaves = tbChaves.getValueAt(linhaSel, 0).toString();
-            String tipo = tbChaves.getValueAt(linhaSel, 1).toString();
-            String numeracao = tbChaves.getValueAt(linhaSel, 2).toString();
-            String C = tbChaves.getValueAt(linhaSel, 3).toString();
-            String quantidade = tbChaves.getValueAt(linhaSel, 4).toString();
-            
-            txtID.setText(id_chaves);
-            txtTipo.setText(tipo);
-            txtNumeracao.setText(numeracao);
-            txtC.setText(C);
-            txtQuantidade.setText(quantidade);
-        }
     }//GEN-LAST:event_tbChavesMouseClicked
 
     /**

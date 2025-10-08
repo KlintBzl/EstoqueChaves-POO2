@@ -27,12 +27,15 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         btnvoltar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbChavesCVirgens = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbChavesCUsadas = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbHistoricoEeS = new javax.swing.JTable();
@@ -65,17 +68,16 @@ public class telaPrincipal extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela principal");
         setResizable(false);
 
         btnvoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/voltar.png"))); // NOI18N
+        btnvoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnvoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnvoltarActionPerformed(evt);
             }
         });
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Chaves Virgens em estoque");
 
         tbChavesCVirgens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -123,6 +125,32 @@ public class telaPrincipal extends javax.swing.JFrame {
             tbChavesCVirgens.getColumnModel().getColumn(3).setResizable(false);
             tbChavesCVirgens.getColumnModel().getColumn(4).setResizable(false);
         }
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setText("Chaves Virgens em estoque");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         tbChavesCUsadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -173,6 +201,29 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setText("Chaves Usadas em estoque");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setText("Histórico de entradas e saídas");
@@ -227,6 +278,28 @@ public class telaPrincipal extends javax.swing.JFrame {
             tbHistoricoEeS.getColumnModel().getColumn(5).setResizable(false);
         }
 
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane3)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+
         MenuGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/configuraçãozinha.png"))); // NOI18N
         MenuGer.setText("Gerenciar");
         MenuGer.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -235,6 +308,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        MenuCadastrarGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/addzinho.png"))); // NOI18N
         MenuCadastrarGer.setText("Cadastrar");
 
         MenuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pessoinha.png"))); // NOI18N
@@ -246,6 +320,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         MenuCadastrarGer.add(MenuUsuarios);
 
+        MenuHistoricoGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/historicozinho.png"))); // NOI18N
         MenuHistoricoGer.setText("Históricos");
         MenuHistoricoGer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,6 +329,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         MenuCadastrarGer.add(MenuHistoricoGer);
 
+        MenuChavesGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/chavinha.png"))); // NOI18N
         MenuChavesGer.setText("Chaves");
 
         MenuVirgemCGer.setText("Virgem");
@@ -277,6 +353,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuGer.add(MenuCadastrarGer);
         MenuGer.add(SeparadorDeOpcao);
 
+        MenuAjudaGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ajudinha.png"))); // NOI18N
         MenuAjudaGer.setText("Ajuda");
 
         MenuSobreGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/infinho.png"))); // NOI18N
@@ -292,6 +369,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuGer.add(jSeparator1);
         MenuGer.add(jSeparator2);
 
+        MenuOpcoesGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/opcoezinhas.png"))); // NOI18N
         MenuOpcoesGer.setText("Opções");
 
         MenuSairGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/saidinha.png"))); // NOI18N
@@ -307,6 +385,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         BarraDeMenuPrincipal.add(MenuGer);
 
+        MenuCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/addzinho.png"))); // NOI18N
         MenuCadastrar.setText("Cadastrar");
 
         MenuUsuarios1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pessoinha.png"))); // NOI18N
@@ -318,6 +397,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         MenuCadastrar.add(MenuUsuarios1);
 
+        MenuHistorico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/historicozinho.png"))); // NOI18N
         MenuHistorico.setText("Históricos");
         MenuHistorico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -349,6 +429,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         BarraDeMenuPrincipal.add(MenuCadastrar);
 
+        MenuAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ajudinha.png"))); // NOI18N
         MenuAjuda.setText("Ajuda");
 
         MenuSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/infinho.png"))); // NOI18N
@@ -362,6 +443,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         BarraDeMenuPrincipal.add(MenuAjuda);
 
+        MenuOpções.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/opcoezinhas.png"))); // NOI18N
         MenuOpções.setText("Opções");
 
         MenuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/saidinha.png"))); // NOI18N
@@ -381,46 +463,27 @@ public class telaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(btnvoltar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(jLabel3)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                        .addComponent(btnvoltar)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(btnvoltar)
-                .addGap(21, 21, 21))
+                .addContainerGap())
         );
 
         pack();
@@ -511,56 +574,17 @@ public class telaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuHistoricoActionPerformed
 
     private void tbChavesCVirgensMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbChavesCVirgensMouseClicked
-        int linhaSel = tbChavesCVirgens.getSelectedRow();
-        if(linhaSel != -1 ){
-            String id_chaves = tbChavesCVirgens.getValueAt(linhaSel, 0).toString();
-            String tipo = tbChavesCVirgens.getValueAt(linhaSel, 1).toString();
-            String numeracao = tbChavesCVirgens.getValueAt(linhaSel, 2).toString();
-            String C = tbChavesCVirgens.getValueAt(linhaSel, 3).toString();
-            String quantidade = tbChavesCVirgens.getValueAt(linhaSel, 4).toString();
-            
-            txtID.setText(id_chaves);
-            txtTipo.setText(tipo);
-            txtNumeracao.setText(numeracao);
-            txtC.setText(C);
-            txtQuantidade.setText(quantidade);
-        }
+        
+        
     }//GEN-LAST:event_tbChavesCVirgensMouseClicked
 
     private void tbHistoricoEeSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbHistoricoEeSMouseClicked
-        int linhaSel = tbHistoricoEeS.getSelectedRow();
-            if(linhaSel != -1 ){
-            String id = tbHistoricoEeS.getValueAt(linhaSel, 0).toString();
-            String data = tbHistoricoEeS.getValueAt(linhaSel, 1).toString();
-            String historico = tbHistoricoEeS.getValueAt(linhaSel, 2).toString();
-            String entrada = tbHistoricoEeS.getValueAt(linhaSel, 3).toString();
-            String saida = tbHistoricoEeS.getValueAt(linhaSel, 4).toString();
-            String total = tbHistoricoEeS.getValueAt(linhaSel, 5).toString();
-            
-            txtid.setText(id);
-            txtdata.setText(data);
-            txthistorico.setText(historico);
-            txtentrada.setText(entrada);
-            txtsaida.setText(saida);
-            txttotal.setText(total);
-        }
+        
+        
     }//GEN-LAST:event_tbHistoricoEeSMouseClicked
 
     private void tbChavesCUsadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbChavesCUsadasMouseClicked
-        int linhaSel = tbChavesCUsadas.getSelectedRow();
-        if(linhaSel != -1 ){
-            String id_chaves = tbChavesCUsadas.getValueAt(linhaSel, 0).toString();
-            String tipo = tbChavesCUsadas.getValueAt(linhaSel, 1).toString();
-            String numeracao = tbChavesCUsadas.getValueAt(linhaSel, 2).toString();
-            String C = tbChavesCUsadas.getValueAt(linhaSel, 3).toString();
-            String quantidade = tbChavesCUsadas.getValueAt(linhaSel, 4).toString();
-
-            txtIDUsadas.setText(id_chaves);
-            txtTipoUsadas.setText(tipo);
-            txtNumeracaoUsadas.setText(numeracao);
-            txtCUsadas.setText(C);
-            txtQuantidadeUsadas.setText(quantidade);
-        }
+        
     }//GEN-LAST:event_tbChavesCUsadasMouseClicked
 
     public static void main(String args[]) {
@@ -624,6 +648,9 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

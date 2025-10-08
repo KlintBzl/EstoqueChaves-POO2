@@ -18,8 +18,8 @@ public class HistoricoDAO {
 
 
     public void inserirHistorico(HistoricoDTO objHistoricoDTO) {
-        String sql = "insert into tb_historicos (id_historico, data, historico, entrada, saida, total)"
-                + " values (?, ?, ?, ?, ?, ?)";
+        String sql = "insert into tb_historicos (id_historico, data, historico, entrada, saida)"
+                + " values (?, ?, ?, ?, ?)";
         conexao = ConexaoDAO.conector();
         
         
@@ -30,7 +30,6 @@ public class HistoricoDAO {
             pst.setString(3, objHistoricoDTO.getHistorico());
             pst.setDouble(4, objHistoricoDTO.getEntrada());
             pst.setDouble(5, objHistoricoDTO.getSaida());
-            pst.setDouble(6, objHistoricoDTO.getTotal());
             int add  = pst.executeUpdate();
             if (add > 0) {
                 pesquisaAuto();
@@ -46,7 +45,7 @@ public class HistoricoDAO {
     }
 
     public void pesquisar(HistoricoDTO objHistoricoDTO) {
-        String sql = "select * from tb_historico where id_historico = ?";
+        String sql = "select * from tb_historicos where id_historico = ?";
         conexao = ConexaoDAO.conector();
 
         try {
@@ -59,7 +58,6 @@ public class HistoricoDAO {
                 telaHistorico.txthistorico.setText(rs.getString(4));
                 telaHistorico.txtentrada.setText(rs.getString(5));
                 telaHistorico.txtsaida.setText(rs.getString(5));
-                telaHistorico.txttotal.setText(rs.getString(5));
                 conexao.close();
             } else {
                 JOptionPane.showMessageDialog(null, "Histórico não cadastrado!");
@@ -82,7 +80,7 @@ public class HistoricoDAO {
             model.setNumRows(0);
 
             while (rs.next()) {
-                int id = rs.getInt("id_historicos");
+                int id = rs.getInt("id_historico");
                 String data = rs.getString("data");
                 String historico = rs.getString("historico");
                 double entrada = rs.getDouble("entrada");
@@ -98,16 +96,21 @@ public class HistoricoDAO {
 
     //Método editar
     public void editar(HistoricoDTO objHistoricoDTO) {
-        String sql = "update tb_historicos set data = ?, historico = ?, entrada = ?, saida = ?, total = ? where id_historico = ?";
+        
+        String sql = "update tb_historicos set data = ?, historico = ?, entrada = ?, saida = ?, total = ?  where id_historico = ?";
         conexao = ConexaoDAO.conector();
         try {
             pst = conexao.prepareStatement(sql);
-            pst.setInt(5, objHistoricoDTO.getId());
-            pst.setString(4, objHistoricoDTO.getData());
-            pst.setString(3, objHistoricoDTO.getHistorico());
-            pst.setDouble(2, objHistoricoDTO.getEntrada());
-            pst.setDouble(1, objHistoricoDTO.getSaida());
-            pst.setDouble(1, objHistoricoDTO.getTotal());
+            pst.setString(1, objHistoricoDTO.getData());    
+            pst.setString(2, objHistoricoDTO.getHistorico()); 
+            pst.setDouble(3, objHistoricoDTO.getEntrada());    
+            pst.setDouble(4, objHistoricoDTO.getSaida());  
+            if(telaHistorico.txtentrada.getText().equals(0)){
+            pst.setDouble(5, objHistoricoDTO.getSaida() - objHistoricoDTO.getTotal());
+            }else if(telaHistorico.txtsaida.getText().equals(0)){
+            pst.setDouble(5, objHistoricoDTO.getEntrada() + objHistoricoDTO.getTotal());
+            }
+            pst.setInt(6, objHistoricoDTO.getId());
             int add = pst.executeUpdate();
             if (add > 0) {
                 JOptionPane.showMessageDialog(null, "Histórico editado com sucesso!");
@@ -147,7 +150,6 @@ public class HistoricoDAO {
         telaHistorico.txthistorico.setText(null);
         telaHistorico.txtentrada.setText(null);
         telaHistorico.txtsaida.setText(null);
-        telaHistorico.txttotal.setText(null);
     }
 
     public void tabelarH() {
