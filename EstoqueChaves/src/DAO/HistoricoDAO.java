@@ -111,6 +111,16 @@ public class HistoricoDAO {
             pst.setDouble(5, objHistoricoDTO.getEntrada() + objHistoricoDTO.getTotal());
             }
             pst.setInt(6, objHistoricoDTO.getId());
+            
+            // ARRUMAR URGENTE
+            // ARRUMAR URGENTE
+            // ARRUMAR URGENTE
+            // ARRUMAR URGENTE
+            // ARRUMAR URGENTE
+            // ARRUMAR URGENTE
+            // ARRUMAR URGENTE
+            // ARRUMAR URGENTE
+            
             int add = pst.executeUpdate();
             if (add > 0) {
                 JOptionPane.showMessageDialog(null, "Histórico editado com sucesso!");
