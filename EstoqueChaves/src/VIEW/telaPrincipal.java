@@ -227,6 +227,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             tbHistoricoEeS.getColumnModel().getColumn(5).setResizable(false);
         }
 
+        MenuGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/configuraçãozinha.png"))); // NOI18N
         MenuGer.setText("Gerenciar");
         MenuGer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -236,6 +237,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuCadastrarGer.setText("Cadastrar");
 
+        MenuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pessoinha.png"))); // NOI18N
         MenuUsuarios.setText("Usuarios");
         MenuUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -277,6 +279,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuAjudaGer.setText("Ajuda");
 
+        MenuSobreGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/infinho.png"))); // NOI18N
         MenuSobreGer.setText("Sobre");
         MenuSobreGer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -291,6 +294,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuOpcoesGer.setText("Opções");
 
+        MenuSairGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/saidinha.png"))); // NOI18N
         MenuSairGer.setText("Sair");
         MenuSairGer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,6 +309,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuCadastrar.setText("Cadastrar");
 
+        MenuUsuarios1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pessoinha.png"))); // NOI18N
         MenuUsuarios1.setText("Usuarios");
         MenuUsuarios1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,6 +326,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         MenuCadastrar.add(MenuHistorico);
 
+        MenuChaves1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/chavinha.png"))); // NOI18N
         MenuChaves1.setText("Chaves");
 
         MenuVirgem1.setText("Virgem");
@@ -345,6 +351,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuAjuda.setText("Ajuda");
 
+        MenuSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/infinho.png"))); // NOI18N
         MenuSobre.setText("Sobre");
         MenuSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -357,6 +364,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         MenuOpções.setText("Opções");
 
+        MenuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/saidinha.png"))); // NOI18N
         MenuSair.setText("Sair");
         MenuSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

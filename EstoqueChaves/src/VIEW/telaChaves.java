@@ -271,9 +271,6 @@ public class telaChaves extends javax.swing.JFrame {
 
     private void btnPesquisarChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarChaveActionPerformed
         int id_chaves = Integer.parseInt(txtID.getText());
-        String tipo = txtTipo.getText();
-        
-
         ChaveDTO objChaveDTO = new ChaveDTO();
         objChaveDTO.setId(id_chaves);
         
@@ -300,7 +297,7 @@ public class telaChaves extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarChaveActionPerformed
 
     private void btnEliminarChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarChaveActionPerformed
-         int id_chaves = Integer.parseInt(txtID.getText());
+        int id_chaves = Integer.parseInt(txtID.getText());
         ChaveDTO objChaveDTO = new ChaveDTO();
         objChaveDTO.setId(id_chaves);
         

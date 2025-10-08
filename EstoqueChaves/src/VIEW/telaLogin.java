@@ -17,10 +17,10 @@ public class telaLogin extends javax.swing.JFrame {
         System.out.println(conexao);
 
         if (conexao != null) {
-            ImageIcon iconeVerde = new ImageIcon("src/icones/Conectado.png");
+            ImageIcon iconeVerde = new ImageIcon("src/icones/conectado.png");
             img.setIcon(iconeVerde);
         }else{
-            ImageIcon icone = new ImageIcon("src/icones/Desconectado.png");
+            ImageIcon icone = new ImageIcon("src/icones/desconectado.png");
             img.setIcon(icone);
         }
     }
@@ -64,7 +64,7 @@ public class telaLogin extends javax.swing.JFrame {
             }
         });
 
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/Desconectado.png"))); // NOI18N
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/desconectado.png"))); // NOI18N
 
         jLabel3.setText("Ainda não se cadastrou?");
 
@@ -94,10 +94,10 @@ public class telaLogin extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
                                     .addComponent(txtLogin)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
                                 .addComponent(img)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(lblCadastrar, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -120,18 +120,16 @@ public class telaLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
                         .addComponent(btnlogin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblCadastrar)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addComponent(lblCadastrar))
+                    .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
