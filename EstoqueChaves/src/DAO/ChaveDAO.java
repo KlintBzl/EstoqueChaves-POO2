@@ -48,18 +48,18 @@ public class ChaveDAO {
     }
 
     public void pesquisar(ChaveDTO objChaveDTO) {
-        String sql = "select * from tb_chaves where id_chaves = ?";
+        String sql = "select * from tb_chaves where numeracao = ?";
         conexao = ConexaoDAO.conector();
 
         try {
             pst = conexao.prepareStatement(sql);
-            pst.setInt(1, objChaveDTO.getId());
+            pst.setInt(1, objChaveDTO.getNumeracao());
             rs = pst.executeQuery();
             if (rs.next()) {
-                telaChaves.txtTipo.setText(rs.getString(2));
-                telaChaves.txtNumeracao.setText(rs.getString(3));
-                telaChaves.txtC.setText(rs.getString(4));
-                telaChaves.txtQuantidade.setText(rs.getString(5));
+                telaChaves.txtID.setText(rs.getString("id_chaves"));
+                telaChaves.cboTipo.setSelectedItem(rs.getString("tipo"));
+                telaChaves.txtC.setText(rs.getString("C"));
+                telaChaves.txtQuantidade.setText(rs.getString("quantidade"));
                 conexao.close();
             } else {
                 JOptionPane.showMessageDialog(null, "Chave não cadastrada!");
@@ -102,10 +102,10 @@ public class ChaveDAO {
         try {
             pst = conexao.prepareStatement(sql);
             pst.setInt(5, objChaveDTO.getId());
-            pst.setString(4, objChaveDTO.getTipo());
-            pst.setInt(3, objChaveDTO.getNumeracao());
-            pst.setInt(2, objChaveDTO.getC());
-            pst.setInt(1, objChaveDTO.getQuantidade());
+            pst.setString(1, objChaveDTO.getTipo());
+            pst.setInt(2, objChaveDTO.getNumeracao());
+            pst.setInt(3, objChaveDTO.getC());
+            pst.setInt(4, objChaveDTO.getQuantidade());
             int add = pst.executeUpdate();
             if (add > 0) {
                 JOptionPane.showMessageDialog(null, "Chave editada com sucesso!");
@@ -141,7 +141,6 @@ public class ChaveDAO {
 
     public void limparCampos() {
         telaChaves.txtID.setText(null);
-        telaChaves.txtTipo.setText(null);
         telaChaves.txtNumeracao.setText(null);
         telaChaves.txtC.setText(null);
         telaChaves.txtQuantidade.setText(null);

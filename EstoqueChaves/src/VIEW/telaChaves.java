@@ -23,7 +23,6 @@ public class telaChaves extends javax.swing.JFrame {
         lblTipo = new javax.swing.JLabel();
         lblNumeracao = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
-        txtTipo = new javax.swing.JTextField();
         txtNumeracao = new javax.swing.JTextField();
         txtC = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -37,6 +36,7 @@ public class telaChaves extends javax.swing.JFrame {
         btnEliminarChave = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
+        cboTipo = new javax.swing.JComboBox<>();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -153,55 +153,61 @@ public class telaChaves extends javax.swing.JFrame {
             }
         });
 
+        cboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yale", "Gorje", "Tetra" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(lblTipo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtTipo, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                            .addComponent(txtID)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(cboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(btnLimpar)))
+                        .addGap(15, 15, 15))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lblNumeracao)
                         .addGap(18, 18, 18)
-                        .addComponent(txtNumeracao, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNumeracao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtC, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnLimpar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddChave)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnAddChave)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPesquisarChave)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 60, Short.MAX_VALUE))
+                        .addGap(0, 24, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnPesquisarChave)
-                        .addGap(12, 12, 12)
+                        .addGap(18, 18, 18)
                         .addComponent(btnEditarChave)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btnEliminarChave)
-                        .addGap(21, 21, 21))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnVoltar)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -215,17 +221,14 @@ public class telaChaves extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel1)
-                                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(13, 13, 13)
-                                        .addComponent(btnLimpar)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblTipo)))
+                                    .addComponent(jLabel1)
+                                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(24, 24, 24)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblTipo)
+                                    .addComponent(cboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnLimpar)))
                             .addComponent(btnAddChave)
                             .addComponent(btnPesquisarChave)
                             .addComponent(btnEditarChave))
@@ -253,7 +256,7 @@ public class telaChaves extends javax.swing.JFrame {
     private void btnAddChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddChaveActionPerformed
         
         int id_chaves = Integer.parseInt(txtID.getText());
-        String tipo = txtTipo.getText();
+        String tipo = cboTipo.getSelectedItem().toString();
         int numeracao = Integer.parseInt(txtNumeracao.getText());
         int C = Integer.parseInt(txtC.getText());
         int quantidade = Integer.parseInt(txtQuantidade.getText());
@@ -270,9 +273,9 @@ public class telaChaves extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddChaveActionPerformed
 
     private void btnPesquisarChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarChaveActionPerformed
-        int id_chaves = Integer.parseInt(txtID.getText());
+        int numeracao = Integer.parseInt(txtNumeracao.getText());
         ChaveDTO objChaveDTO = new ChaveDTO();
-        objChaveDTO.setId(id_chaves);
+        objChaveDTO.setNumeracao(numeracao);
         
         ChaveDAO objChaveDAO = new ChaveDAO();
         objChaveDAO.pesquisar(objChaveDTO);
@@ -280,7 +283,7 @@ public class telaChaves extends javax.swing.JFrame {
 
     private void btnEditarChaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarChaveActionPerformed
         int id_chaves = Integer.parseInt(txtID.getText());
-        String tipo = txtTipo.getText();
+        String tipo = cboTipo.getSelectedItem().toString();
         int numeracao = Integer.parseInt(txtNumeracao.getText());
         int C = Integer.parseInt(txtC.getText());
         int quantidade = Integer.parseInt(txtQuantidade.getText());
@@ -361,6 +364,7 @@ public class telaChaves extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnPesquisarChave;
     private javax.swing.JButton btnVoltar;
+    public static javax.swing.JComboBox<String> cboTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -374,6 +378,5 @@ public class telaChaves extends javax.swing.JFrame {
     public static javax.swing.JTextField txtID;
     public static javax.swing.JTextField txtNumeracao;
     public static javax.swing.JTextField txtQuantidade;
-    public static javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

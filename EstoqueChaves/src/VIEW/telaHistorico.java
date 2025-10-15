@@ -35,6 +35,8 @@ public class telaHistorico extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbHistorico = new javax.swing.JTable();
         btnlimpar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        lblTotalizando = new javax.swing.JLabel();
 
         btnPesquisar.setBackground(new java.awt.Color(255, 245, 0));
         btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/procurar.png"))); // NOI18N
@@ -148,10 +150,18 @@ public class telaHistorico extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Total:");
+
+        lblTotalizando.setText("0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,16 +175,21 @@ public class telaHistorico extends javax.swing.JFrame {
                     .addComponent(txthistorico, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnlimpar, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtsaida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                        .addComponent(txtentrada, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtsaida, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(txtentrada)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblTotalizando, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAdd)
                         .addGap(18, 18, 18)
@@ -184,10 +199,6 @@ public class telaHistorico extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(brnVoltar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,7 +223,8 @@ public class telaHistorico extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(txthistorico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                                .addComponent(jLabel5)
+                                .addComponent(lblTotalizando))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAdd)
@@ -221,7 +233,9 @@ public class telaHistorico extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(brnVoltar)
                             .addComponent(btnEditar))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -243,51 +257,22 @@ public class telaHistorico extends javax.swing.JFrame {
     }//GEN-LAST:event_txtsaidaActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        if(txtentrada.getText().equals("0")){
-        String Data = txtdata.getText();
-        String Historico = txthistorico.getText();
-        Double Saida = Double.parseDouble(txtsaida.getText());
-        Double Total =- Saida;
-        
-        if(Total > 0){
+
+        int id_historico = Integer.parseInt(txtid.getText());
+        String data = txtdata.getText();
+        String historico = txthistorico.getText();
+        double entrada = Double.parseDouble(txtentrada.getText());
+        double saida = Double.parseDouble(txtsaida.getText());
+
         HistoricoDTO objHistoricoDTO = new HistoricoDTO();
-        objHistoricoDTO.setData(Data);
-        objHistoricoDTO.setHistorico(Historico);
-        objHistoricoDTO.setSaida(Saida);
-        objHistoricoDTO.setTotal(Total);
+        objHistoricoDTO.setId(id_historico);
+        objHistoricoDTO.setData(data);
+        objHistoricoDTO.setHistorico(historico);
+        objHistoricoDTO.setEntrada(entrada);
+        objHistoricoDTO.setSaida(saida);
         
         HistoricoDAO objHistoricoDAO = new HistoricoDAO();
         objHistoricoDAO.inserirHistorico(objHistoricoDTO);
-        }else{
-            int verificar = JOptionPane.showConfirmDialog(null, "Opa! Tem certeza que colocou o valor certo?"
-                    + " Você está tirando um número de dinheiro maio que o total!", "ERRO!", JOptionPane.YES_NO_OPTION);
-                    if(verificar == JOptionPane.YES_OPTION){
-                        HistoricoDTO objHistoricoDTO = new HistoricoDTO();
-                        objHistoricoDTO.setData(Data);
-                        objHistoricoDTO.setHistorico(Historico);
-                        objHistoricoDTO.setSaida(Saida);
-                        objHistoricoDTO.setTotal(Total);
-        
-                        HistoricoDAO objHistoricoDAO = new HistoricoDAO();
-                        objHistoricoDAO.inserirHistorico(objHistoricoDTO);
-
-                    }
-        }
-        
-        }else if(txtsaida.getText().equals("0")){
-        String Data = txtdata.getText();
-        String Historico = txthistorico.getText();
-        Double Entrada = Double.parseDouble(txtentrada.getText());
-        Double Total =+ Entrada;
-        HistoricoDTO objHistoricoDTO = new HistoricoDTO();
-        objHistoricoDTO.setData(Data);
-        objHistoricoDTO.setHistorico(Historico);
-        objHistoricoDTO.setEntrada(Entrada);
-        objHistoricoDTO.setTotal(Total);
-
-        HistoricoDAO objHistoricoDAO = new HistoricoDAO();
-        objHistoricoDAO.inserirHistorico(objHistoricoDTO);
-        }
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
@@ -390,8 +375,10 @@ public class telaHistorico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JLabel lblTotalizando;
     public static javax.swing.JTable tbHistorico;
     public static javax.swing.JTextField txtdata;
     public static javax.swing.JTextField txtentrada;

@@ -4,6 +4,7 @@ import DAO.ConexaoDAO;
 import DTO.UsuarioDTO;
 import VIEW.telaPrincipal;
 import VIEW.telaUsuarios;
+import java.awt.Color;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -32,7 +33,11 @@ public class UsuarioDAO {
                 if (perfil.equals("admin")) {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
-                    
+                    ImageIcon iconeAzul = new ImageIcon("src/icones/seguroSegurado.png");
+                    telaPrincipal.lblImg.setIcon(iconeAzul);
+                    telaPrincipal.lblPerfil.setText("Administrador");
+                    telaPrincipal.lblPerfil.setForeground(Color.blue);
+                    telaPrincipal.lblFuncao.setText("Edite e adicione...");
                     conexao.close();                   
                 } else {
                     telaPrincipal principal = new telaPrincipal();

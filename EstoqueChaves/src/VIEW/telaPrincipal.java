@@ -39,6 +39,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbHistoricoEeS = new javax.swing.JTable();
+        lblImg = new javax.swing.JLabel();
+        lblPerfil = new javax.swing.JLabel();
+        lblFuncao = new javax.swing.JLabel();
         BarraDeMenuPrincipal = new javax.swing.JMenuBar();
         MenuGer = new javax.swing.JMenu();
         MenuCadastrarGer = new javax.swing.JMenu();
@@ -62,6 +65,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         MenuUsada1 = new javax.swing.JMenuItem();
         MenuAjuda = new javax.swing.JMenu();
         MenuSobre = new javax.swing.JMenuItem();
+        MenuPQV = new javax.swing.JMenuItem();
         MenuOpções = new javax.swing.JMenu();
         MenuSair = new javax.swing.JMenuItem();
 
@@ -112,11 +116,6 @@ public class telaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbChavesCVirgens.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbChavesCVirgensMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(tbChavesCVirgens);
         if (tbChavesCVirgens.getColumnModel().getColumnCount() > 0) {
             tbChavesCVirgens.getColumnModel().getColumn(0).setResizable(false);
@@ -154,40 +153,35 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         tbChavesCUsadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Tipo", "Numeração", "C", "Quantidade"
+                "ID", "Marca", "Tipo", "Numeração", "C", "Quantidade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
-            }
-        });
-        tbChavesCUsadas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbChavesCUsadasMouseClicked(evt);
             }
         });
         jScrollPane2.setViewportView(tbChavesCUsadas);
@@ -197,6 +191,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             tbChavesCUsadas.getColumnModel().getColumn(2).setResizable(false);
             tbChavesCUsadas.getColumnModel().getColumn(3).setResizable(false);
             tbChavesCUsadas.getColumnModel().getColumn(4).setResizable(false);
+            tbChavesCUsadas.getColumnModel().getColumn(5).setResizable(false);
         }
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -263,11 +258,6 @@ public class telaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbHistoricoEeS.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbHistoricoEeSMouseClicked(evt);
-            }
-        });
         jScrollPane3.setViewportView(tbHistoricoEeS);
         if (tbHistoricoEeS.getColumnModel().getColumnCount() > 0) {
             tbHistoricoEeS.getColumnModel().getColumn(0).setResizable(false);
@@ -300,13 +290,16 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
+        lblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/seguro.png"))); // NOI18N
+        lblImg.setText("dfhg");
+
+        lblPerfil.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblPerfil.setText("Usuário");
+
+        lblFuncao.setText("Apenas veja...");
+
         MenuGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/configuraçãozinha.png"))); // NOI18N
         MenuGer.setText("Gerenciar");
-        MenuGer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuGerMouseClicked(evt);
-            }
-        });
 
         MenuCadastrarGer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/addzinho.png"))); // NOI18N
         MenuCadastrarGer.setText("Cadastrar");
@@ -441,6 +434,15 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         MenuAjuda.add(MenuSobre);
 
+        MenuPQV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/porquezinho.png"))); // NOI18N
+        MenuPQV.setText("Por que apenas vejo?");
+        MenuPQV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuPQVActionPerformed(evt);
+            }
+        });
+        MenuAjuda.add(MenuPQV);
+
         BarraDeMenuPrincipal.add(MenuAjuda);
 
         MenuOpções.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/opcoezinhas.png"))); // NOI18N
@@ -471,7 +473,15 @@ public class telaPrincipal extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnvoltar)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblPerfil)
+                                .addGap(11, 11, 11))
+                            .addComponent(lblFuncao, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblImg, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -481,9 +491,16 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(btnvoltar)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblImg)
+                        .addComponent(btnvoltar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(lblPerfil)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblFuncao)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -501,10 +518,6 @@ public class telaPrincipal extends javax.swing.JFrame {
         usuarios.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_MenuUsuarios1ActionPerformed
-
-    private void MenuGerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuGerMouseClicked
-
-    }//GEN-LAST:event_MenuGerMouseClicked
 
     private void MenuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuariosActionPerformed
         telaUsuarios usuarios = new telaUsuarios();
@@ -573,19 +586,11 @@ public class telaPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_MenuHistoricoActionPerformed
 
-    private void tbChavesCVirgensMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbChavesCVirgensMouseClicked
-        
-        
-    }//GEN-LAST:event_tbChavesCVirgensMouseClicked
-
-    private void tbHistoricoEeSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbHistoricoEeSMouseClicked
-        
-        
-    }//GEN-LAST:event_tbHistoricoEeSMouseClicked
-
-    private void tbChavesCUsadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbChavesCUsadasMouseClicked
-        
-    }//GEN-LAST:event_tbChavesCUsadasMouseClicked
+    private void MenuPQVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPQVActionPerformed
+        telaPorque pq = new telaPorque();
+        pq.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_MenuPQVActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -632,6 +637,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenuItem MenuHistoricoGer;
     private javax.swing.JMenu MenuOpcoesGer;
     public static javax.swing.JMenu MenuOpções;
+    private javax.swing.JMenuItem MenuPQV;
     public static javax.swing.JMenuItem MenuSair;
     private javax.swing.JMenuItem MenuSairGer;
     public static javax.swing.JMenuItem MenuSobre;
@@ -656,6 +662,9 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
+    public static javax.swing.JLabel lblFuncao;
+    public static javax.swing.JLabel lblImg;
+    public static javax.swing.JLabel lblPerfil;
     public static javax.swing.JTable tbChavesCUsadas;
     public static javax.swing.JTable tbChavesCVirgens;
     public static javax.swing.JTable tbHistoricoEeS;

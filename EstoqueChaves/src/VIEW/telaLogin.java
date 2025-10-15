@@ -19,9 +19,6 @@ public class telaLogin extends javax.swing.JFrame {
         if (conexao != null) {
             ImageIcon iconeVerde = new ImageIcon("src/icones/conectado.png");
             img.setIcon(iconeVerde);
-        }else{
-            ImageIcon icone = new ImageIcon("src/icones/desconectado.png");
-            img.setIcon(icone);
         }
     }
 

@@ -103,6 +103,7 @@ public class ChaveUsadaDAO {
         String sql = "update tb_chavesUsadas set marca = ?, tipo = ?, numeracao = ?, C = ?, quantidade = ? where id_chaves = ?";
         conexao = ConexaoDAO.conector();
         try {
+            pst = conexao.prepareStatement(sql);
             pst.setString(1, objChaveDTO.getMarca());       
             pst.setString(2, objChaveDTO.getTipo());        
             pst.setInt(3, objChaveDTO.getNumeracao());      

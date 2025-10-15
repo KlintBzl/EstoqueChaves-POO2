@@ -18,8 +18,8 @@ public class HistoricoDAO {
 
 
     public void inserirHistorico(HistoricoDTO objHistoricoDTO) {
-        String sql = "insert into tb_historicos (id_historico, data, historico, entrada, saida)"
-                + " values (?, ?, ?, ?, ?)";
+        String sql = "insert into tb_historicos (id_historico, data, historico, entrada, saida, total)"
+                + " values (?, ?, ?, ?, ?, ?)";
         conexao = ConexaoDAO.conector();
         
         
@@ -30,6 +30,19 @@ public class HistoricoDAO {
             pst.setString(3, objHistoricoDTO.getHistorico());
             pst.setDouble(4, objHistoricoDTO.getEntrada());
             pst.setDouble(5, objHistoricoDTO.getSaida());
+
+            double total = objHistoricoDTO.getTotal();
+            if (telaHistorico.txtentrada.getText().equals("0") && !telaHistorico.txtsaida.getText().equals("0")) {
+                total = -objHistoricoDTO.getSaida();  
+            } else if (telaHistorico.txtsaida.getText().equals("0") && !telaHistorico.txtentrada.getText().equals("0")) {
+                total = objHistoricoDTO.getEntrada(); 
+            } else {
+                JOptionPane.showMessageDialog(null, "Preencha apenas um dos campos de entrada ou saída, e um dos mesmos com '0'");
+                return; 
+            }
+
+            pst.setDouble(6, total);
+
             int add  = pst.executeUpdate();
             if (add > 0) {
                 pesquisaAuto();
@@ -53,11 +66,12 @@ public class HistoricoDAO {
             pst.setInt(1, objHistoricoDTO.getId());
             rs = pst.executeQuery();
             if (rs.next()) {
-                telaHistorico.txtid.setText(rs.getString(2));
-                telaHistorico.txtdata.setText(rs.getString(3));
-                telaHistorico.txthistorico.setText(rs.getString(4));
-                telaHistorico.txtentrada.setText(rs.getString(5));
+                telaHistorico.txtid.setText(rs.getString(1));
+                telaHistorico.txtdata.setText(rs.getString(2));
+                telaHistorico.txthistorico.setText(rs.getString(3));
+                telaHistorico.txtentrada.setText(rs.getString(4));
                 telaHistorico.txtsaida.setText(rs.getString(5));
+                telaHistorico.lblTotalizando.setText(rs.getString(6));
                 conexao.close();
             } else {
                 JOptionPane.showMessageDialog(null, "Histórico não cadastrado!");
@@ -105,21 +119,12 @@ public class HistoricoDAO {
             pst.setString(2, objHistoricoDTO.getHistorico()); 
             pst.setDouble(3, objHistoricoDTO.getEntrada());    
             pst.setDouble(4, objHistoricoDTO.getSaida());  
-            if(telaHistorico.txtentrada.getText().equals(0)){
+            if(telaHistorico.txtentrada.getText().equals("0")){
             pst.setDouble(5, objHistoricoDTO.getSaida() - objHistoricoDTO.getTotal());
-            }else if(telaHistorico.txtsaida.getText().equals(0)){
+            }else if(telaHistorico.txtsaida.getText().equals("0")){
             pst.setDouble(5, objHistoricoDTO.getEntrada() + objHistoricoDTO.getTotal());
             }
             pst.setInt(6, objHistoricoDTO.getId());
-            
-            // ARRUMAR URGENTE
-            // ARRUMAR URGENTE
-            // ARRUMAR URGENTE
-            // ARRUMAR URGENTE
-            // ARRUMAR URGENTE
-            // ARRUMAR URGENTE
-            // ARRUMAR URGENTE
-            // ARRUMAR URGENTE
             
             int add = pst.executeUpdate();
             if (add > 0) {
