@@ -60,6 +60,11 @@ public class telaLogin extends javax.swing.JFrame {
                 btnloginActionPerformed(evt);
             }
         });
+        btnlogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnloginKeyPressed(evt);
+            }
+        });
 
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/desconectado.png"))); // NOI18N
 
@@ -154,6 +159,10 @@ public class telaLogin extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnloginActionPerformed
+
+    private void btnloginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnloginKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnloginKeyPressed
 
     public static void main(String args[]) {
         try {
