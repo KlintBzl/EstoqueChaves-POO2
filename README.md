@@ -40,17 +40,21 @@ Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar
 ---
 
 ## Histórico de Atualizações
+- **v4.1.0** - (15/10/2025)
+  - Melhora dos icones
+  - Implementação das funções de edição ao histórico
+
 - **v4.0.0** - (13/10/2025)
-  - Versão final da estrutura.
-  - idealização de pequenas coisas que melhorariam a interatividade com o usuário.
+  - Adição da nova tela para ajuda de usuarios
+  - Idealização de pequenas coisas que melhorariam a interatividade com o usuário.
 
 - **v3.0.0** - (01/10/2025)
   - Criação das classes de histórico DTO e DAO, além de uma tela para cadastro e edição do mesmo.
-  - melhora dos métodos de histórico.
+  - Melhora dos métodos de histórico.
 
 - **v2.2.0** - (29/09/2025)
   - Adição dos métodos de verificação de histórico.
-  - melhora na organização dos botões principais.
+  - Melhora na organização dos botões principais.
 
 - **v2.1.1** - (29/09/2025)
   - Adição de botões aperfeiçoados, melhorados e mais amplos.
