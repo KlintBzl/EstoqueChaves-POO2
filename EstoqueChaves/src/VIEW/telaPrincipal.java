@@ -4,9 +4,6 @@ package VIEW;
 import DAO.ChaveDAO;
 import DAO.ChaveUsadaDAO;
 import DAO.HistoricoDAO;
-import static VIEW.telaChaves.*;
-import static VIEW.telaChavesUsadas.*;
-import static VIEW.telaHistorico.*;
 import javax.swing.JOptionPane;
 
 public class telaPrincipal extends javax.swing.JFrame {
