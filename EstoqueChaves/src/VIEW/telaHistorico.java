@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 
 public class telaHistorico extends javax.swing.JFrame {
 
-    HistoricoDTO objHistoricoDTOTT = new HistoricoDTO();
     
     public telaHistorico() {
         initComponents();
@@ -183,11 +182,12 @@ public class telaHistorico extends javax.swing.JFrame {
                                 .addComponent(jLabel6)
                                 .addComponent(txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtsaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel3)
-                            .addComponent(txthistorico, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnlimpar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnlimpar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txthistorico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAdd)
@@ -196,8 +196,8 @@ public class telaHistorico extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(brnVoltar)
                             .addComponent(btnEditar))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -221,7 +221,7 @@ public class telaHistorico extends javax.swing.JFrame {
         objHistoricoDTO.setHistorico(historico);
         objHistoricoDTO.setEntrada(entrada);
         objHistoricoDTO.setSaida(saida);
-        double total = objHistoricoDTOTT.getTotal();
+        double total = objHistoricoDTO.getTotal();
             if (telaHistorico.txtentrada.getText().equals("0") || telaHistorico.txtentrada.getText().equals("0.0")
                     && !telaHistorico.txtsaida.getText().equals("0.0") || !telaHistorico.txtsaida.getText().equals("0")) {
                 total -= objHistoricoDTO.getSaida();  
@@ -232,7 +232,7 @@ public class telaHistorico extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Preencha apenas um dos campos de entrada ou saída, e um dos mesmos com '0'");
                 return; 
             }
-        objHistoricoDTOTT.setTotal(total);
+        objHistoricoDTO.setTotal(total);
         
         
         HistoricoDAO objHistoricoDAO = new HistoricoDAO();
@@ -267,7 +267,7 @@ public class telaHistorico extends javax.swing.JFrame {
         objHistoricoDTO.setHistorico(historico);
         objHistoricoDTO.setEntrada(entrada);
         objHistoricoDTO.setSaida(saida);
-        double total = objHistoricoDTOTT.getTotal();
+        double total = objHistoricoDTO.getTotal();
             if (telaHistorico.txtentrada.getText().equals("0") && !telaHistorico.txtsaida.getText().equals("0")) {
                 total -= objHistoricoDTO.getSaida();  
             } else if (telaHistorico.txtsaida.getText().equals("0") && !telaHistorico.txtentrada.getText().equals("0")) {
@@ -276,7 +276,7 @@ public class telaHistorico extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Preencha apenas um dos campos de entrada ou saída, e um dos mesmos com '0'");
                 return; 
             }
-        objHistoricoDTOTT.setTotal(total);
+        objHistoricoDTO.setTotal(total);
         
         HistoricoDAO objHistoricoDAO = new HistoricoDAO();
         objHistoricoDAO.editar(objHistoricoDTO);
@@ -293,34 +293,9 @@ public class telaHistorico extends javax.swing.JFrame {
         historicar.limparCampos();
     }//GEN-LAST:event_btnlimparActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(telaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(telaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(telaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(telaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new telaHistorico().setVisible(true);
