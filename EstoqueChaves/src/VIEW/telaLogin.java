@@ -71,7 +71,7 @@ public class telaLogin extends javax.swing.JFrame {
         jLabel3.setText("Ainda não se cadastrou?");
 
         lblCadastrar.setForeground(new java.awt.Color(0, 0, 250));
-        lblCadastrar.setText("Cadastre-se");
+        lblCadastrar.setText("Cadastre-se!");
         lblCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
