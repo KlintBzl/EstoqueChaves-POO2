@@ -7,10 +7,14 @@ import javax.swing.JOptionPane;
 
 public class telaHistorico extends javax.swing.JFrame {
 
+    HistoricoDTO objHistoricoDTOTT = new HistoricoDTO();
+    
     public telaHistorico() {
         initComponents();
         HistoricoDAO historicar = new HistoricoDAO();
         historicar.pesquisaAuto();
+        
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -35,8 +39,6 @@ public class telaHistorico extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbHistorico = new javax.swing.JTable();
         btnlimpar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        lblTotalizando = new javax.swing.JLabel();
 
         btnPesquisar.setBackground(new java.awt.Color(255, 245, 0));
         btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/procurar.png"))); // NOI18N
@@ -59,30 +61,6 @@ public class telaHistorico extends javax.swing.JFrame {
         jLabel4.setText("Entrada");
 
         jLabel6.setText("Saída");
-
-        txtid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtidActionPerformed(evt);
-            }
-        });
-
-        txthistorico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txthistoricoActionPerformed(evt);
-            }
-        });
-
-        txtentrada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtentradaActionPerformed(evt);
-            }
-        });
-
-        txtsaida.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsaidaActionPerformed(evt);
-            }
-        });
 
         btnAdd.setBackground(new java.awt.Color(0, 127, 255));
         btnAdd.setForeground(new java.awt.Color(0, 127, 255));
@@ -136,11 +114,6 @@ public class telaHistorico extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbHistorico.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbHistoricoMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(tbHistorico);
 
         btnlimpar.setText("Limpar");
@@ -149,10 +122,6 @@ public class telaHistorico extends javax.swing.JFrame {
                 btnlimparActionPerformed(evt);
             }
         });
-
-        jLabel5.setText("Total:");
-
-        lblTotalizando.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -174,7 +143,7 @@ public class telaHistorico extends javax.swing.JFrame {
                     .addComponent(txtdata)
                     .addComponent(txthistorico, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -183,13 +152,9 @@ public class telaHistorico extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtsaida, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                             .addComponent(txtentrada)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblTotalizando, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAdd)
                         .addGap(18, 18, 18)
@@ -219,12 +184,10 @@ public class telaHistorico extends javax.swing.JFrame {
                                 .addComponent(txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtsaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel3)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txthistorico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel5)
-                                .addComponent(lblTotalizando))))
+                            .addComponent(txthistorico, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnlimpar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAdd)
@@ -233,9 +196,7 @@ public class telaHistorico extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(brnVoltar)
                             .addComponent(btnEditar))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -244,18 +205,6 @@ public class telaHistorico extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtentradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtentradaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtentradaActionPerformed
-
-    private void txthistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthistoricoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txthistoricoActionPerformed
-
-    private void txtsaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsaidaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtsaidaActionPerformed
-
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
 
         int id_historico = Integer.parseInt(txtid.getText());
@@ -263,13 +212,28 @@ public class telaHistorico extends javax.swing.JFrame {
         String historico = txthistorico.getText();
         double entrada = Double.parseDouble(txtentrada.getText());
         double saida = Double.parseDouble(txtsaida.getText());
-
+        
+            
         HistoricoDTO objHistoricoDTO = new HistoricoDTO();
+        
         objHistoricoDTO.setId(id_historico);
         objHistoricoDTO.setData(data);
         objHistoricoDTO.setHistorico(historico);
         objHistoricoDTO.setEntrada(entrada);
         objHistoricoDTO.setSaida(saida);
+        double total = objHistoricoDTOTT.getTotal();
+            if (telaHistorico.txtentrada.getText().equals("0") || telaHistorico.txtentrada.getText().equals("0.0")
+                    && !telaHistorico.txtsaida.getText().equals("0.0") || !telaHistorico.txtsaida.getText().equals("0")) {
+                total -= objHistoricoDTO.getSaida();  
+            } else if (telaHistorico.txtsaida.getText().equals("0") || telaHistorico.txtsaida.getText().equals("0.0")
+                    && !telaHistorico.txtentrada.getText().equals("0.0") || !telaHistorico.txtentrada.getText().equals("0")) {
+                total += objHistoricoDTO.getEntrada(); 
+            } else {
+                JOptionPane.showMessageDialog(null, "Preencha apenas um dos campos de entrada ou saída, e um dos mesmos com '0'");
+                return; 
+            }
+        objHistoricoDTOTT.setTotal(total);
+        
         
         HistoricoDAO objHistoricoDAO = new HistoricoDAO();
         objHistoricoDAO.inserirHistorico(objHistoricoDTO);
@@ -281,9 +245,7 @@ public class telaHistorico extends javax.swing.JFrame {
 
     private void btnPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisar1ActionPerformed
         int id_historico = Integer.parseInt(txtid.getText());
-        String data = txtdata.getText();
         
-
         HistoricoDTO objHistoricoDTO = new HistoricoDTO();
         objHistoricoDTO.setId(id_historico);
         
@@ -299,11 +261,22 @@ public class telaHistorico extends javax.swing.JFrame {
         double saida = Double.parseDouble(txtsaida.getText());
 
         HistoricoDTO objHistoricoDTO = new HistoricoDTO();
+        
         objHistoricoDTO.setId(id_historico);
         objHistoricoDTO.setData(data);
         objHistoricoDTO.setHistorico(historico);
         objHistoricoDTO.setEntrada(entrada);
         objHistoricoDTO.setSaida(saida);
+        double total = objHistoricoDTOTT.getTotal();
+            if (telaHistorico.txtentrada.getText().equals("0") && !telaHistorico.txtsaida.getText().equals("0")) {
+                total -= objHistoricoDTO.getSaida();  
+            } else if (telaHistorico.txtsaida.getText().equals("0") && !telaHistorico.txtentrada.getText().equals("0")) {
+                total += objHistoricoDTO.getEntrada(); 
+            } else {
+                JOptionPane.showMessageDialog(null, "Preencha apenas um dos campos de entrada ou saída, e um dos mesmos com '0'");
+                return; 
+            }
+        objHistoricoDTOTT.setTotal(total);
         
         HistoricoDAO objHistoricoDAO = new HistoricoDAO();
         objHistoricoDAO.editar(objHistoricoDTO);
@@ -314,15 +287,6 @@ public class telaHistorico extends javax.swing.JFrame {
         principal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_brnVoltarActionPerformed
-
-    private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtidActionPerformed
-
-    private void tbHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbHistoricoMouseClicked
-        int i = 0;
-            if( i > 0 ){
-        }    }//GEN-LAST:event_tbHistoricoMouseClicked
 
     private void btnlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimparActionPerformed
         HistoricoDAO historicar = new HistoricoDAO();
@@ -375,10 +339,8 @@ public class telaHistorico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JLabel lblTotalizando;
     public static javax.swing.JTable tbHistorico;
     public static javax.swing.JTextField txtdata;
     public static javax.swing.JTextField txtentrada;

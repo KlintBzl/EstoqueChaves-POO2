@@ -50,6 +50,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         SeparadorDeOpcao = new javax.swing.JPopupMenu.Separator();
         MenuAjudaGer = new javax.swing.JMenu();
         MenuSobreGer = new javax.swing.JMenuItem();
+        menupqvejo = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         MenuOpcoesGer = new javax.swing.JMenu();
@@ -355,6 +356,15 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         MenuAjudaGer.add(MenuSobreGer);
 
+        menupqvejo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/porquezinho.png"))); // NOI18N
+        menupqvejo.setText("Por que apenas vejo?");
+        menupqvejo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menupqvejoActionPerformed(evt);
+            }
+        });
+        MenuAjudaGer.add(menupqvejo);
+
         MenuGer.add(MenuAjudaGer);
         MenuGer.add(jSeparator1);
         MenuGer.add(jSeparator2);
@@ -589,6 +599,12 @@ public class telaPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_MenuPQVActionPerformed
 
+    private void menupqvejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menupqvejoActionPerformed
+        telaPorque pq = new telaPorque();
+        pq.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menupqvejoActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -662,6 +678,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JLabel lblFuncao;
     public static javax.swing.JLabel lblImg;
     public static javax.swing.JLabel lblPerfil;
+    private javax.swing.JMenuItem menupqvejo;
     public static javax.swing.JTable tbChavesCUsadas;
     public static javax.swing.JTable tbChavesCVirgens;
     public static javax.swing.JTable tbHistoricoEeS;
