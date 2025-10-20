@@ -78,10 +78,7 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtid" pref="139" max="32767" attributes="0"/>
                           <Component id="txtlogin" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="cboperfil" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="cboperfil" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>

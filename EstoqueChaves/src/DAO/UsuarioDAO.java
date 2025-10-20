@@ -14,6 +14,8 @@ public class UsuarioDAO {
     Connection conexao = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
+    
+    int i;
 
     public void logar(UsuarioDTO objusuarioDTO) {
         String sql = "select * from tb_usuarios where login = ? and senha = ?";
@@ -40,7 +42,8 @@ public class UsuarioDAO {
                     telaPrincipal.lblFuncao.setText("Edite e adicione...");
                     telaPrincipal.MenuPQV.setEnabled(false);
                     telaPrincipal.menupqvejo.setEnabled(false);
-                    conexao.close();                   
+                    conexao.close();
+                    i = i + 1;
                 } else {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
@@ -51,6 +54,7 @@ public class UsuarioDAO {
                     telaPrincipal.MenuHistorico.setEnabled(false);
                     telaPrincipal.MenuHistoricoGer.setEnabled(false);
                     conexao.close(); 
+                    i = i + 2;
                 }
 
             } else {
