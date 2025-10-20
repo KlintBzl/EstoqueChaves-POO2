@@ -38,6 +38,8 @@ public class UsuarioDAO {
                     telaPrincipal.lblPerfil.setText("Administrador");
                     telaPrincipal.lblPerfil.setForeground(Color.blue);
                     telaPrincipal.lblFuncao.setText("Edite e adicione...");
+                    telaPrincipal.MenuPQV.setEnabled(false);
+                    telaPrincipal.menupqvejo.setEnabled(false);
                     conexao.close();                   
                 } else {
                     telaPrincipal principal = new telaPrincipal();
