@@ -1,7 +1,7 @@
 #### Estoque Chaves
 
 Este projeto é um sistema desenvolvido em **Java** com integração ao banco de dados **MySQL**, com o objetivo de gerenciar um estoque de chaves, virgens e usadas, mantendo um histórico de entradas e saídas de dinheiro.   
-Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar estoque de chaves virgens e editar informações já colocadas no sistema.
+Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar estoque de chaves e editar informações já colocadas no sistema.
 
 ---
 
