@@ -40,6 +40,10 @@ Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar
 ---
 
 ## Histórico de Atualizações
+- **v5.0.0** - (20/10/2025)
+  - Última versão, a mais atualizada
+  - correções das permissões de usuário
+
 - **v4.1.0** - (15/10/2025)
   - Melhora dos icones
   - Implementação das funções de edição ao histórico
@@ -95,6 +99,9 @@ Este projeto foi idealizado e desenvolvido por:
 ---
 
 ## Informações sobre o Banco de Dados usado
+
+Para manter uma conexão com o banco de dados, baixe o seguinte conector:
+(https://dev.mysql.com/downloads/connector/j/)
 
 O banco de dados usado é o SGDB, o banco de dados original tem o nome de "estoquechaves", mas é de sua opção mudá-lo, apenas tenha certeza que você atualizou as informações em 'ConexaoDAO' no pacote 'DAO'
 
