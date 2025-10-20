@@ -4,7 +4,6 @@ import DAO.ConexaoDAO;
 import DTO.UsuarioDTO;
 import VIEW.telaPrincipal;
 import VIEW.telaUsuarios;
-import java.awt.Color;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
