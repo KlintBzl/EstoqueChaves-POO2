@@ -35,11 +35,6 @@ public class UsuarioDAO {
                 if (perfil.equals("admin")) {
                     telaPrincipal principal = new telaPrincipal();
                     principal.setVisible(true);
-                    ImageIcon iconeAzul = new ImageIcon("src/icones/seguroSegurado.png");
-                    telaPrincipal.lblImg.setIcon(iconeAzul);
-                    telaPrincipal.lblPerfil.setText("Administrador");
-                    telaPrincipal.lblPerfil.setForeground(Color.blue);
-                    telaPrincipal.lblFuncao.setText("Edite e adicione...");
                     telaPrincipal.MenuPQV.setEnabled(false);
                     telaPrincipal.menupqvejo.setEnabled(false);
                     conexao.close();
