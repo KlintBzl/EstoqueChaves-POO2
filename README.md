@@ -40,6 +40,10 @@ Ele permite cadastrar usuários, registrar chaves usadas para revenda, controlar
 ---
 
 ## Histórico de Atualizações
+- **v5.0.0** - (20/10/2025)
+  - Última versão, a mais atualizada
+  - correções das permissões de usuário
+
 - **v4.1.0** - (15/10/2025)
   - Melhora dos icones
   - Implementação das funções de edição ao histórico
