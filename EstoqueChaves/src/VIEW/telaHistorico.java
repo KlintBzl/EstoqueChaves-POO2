@@ -268,14 +268,8 @@ public class telaHistorico extends javax.swing.JFrame {
         objHistoricoDTO.setEntrada(entrada);
         objHistoricoDTO.setSaida(saida);
         double total = objHistoricoDTO.getTotal();
-            if (telaHistorico.txtentrada.getText().equals("0") && !telaHistorico.txtsaida.getText().equals("0")) {
-                total -= objHistoricoDTO.getSaida();  
-            } else if (telaHistorico.txtsaida.getText().equals("0") && !telaHistorico.txtentrada.getText().equals("0")) {
-                total += objHistoricoDTO.getEntrada(); 
-            } else {
-                JOptionPane.showMessageDialog(null, "Preencha apenas um dos campos de entrada ou saída, e um dos mesmos com '0'");
-                return; 
-            }
+            total -= objHistoricoDTO.getSaida();
+            total += objHistoricoDTO.getEntrada();
         objHistoricoDTO.setTotal(total);
         
         HistoricoDAO objHistoricoDAO = new HistoricoDAO();

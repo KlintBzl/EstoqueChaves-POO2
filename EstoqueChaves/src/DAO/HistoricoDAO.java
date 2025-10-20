@@ -24,16 +24,15 @@ public class HistoricoDAO {
         
         
         try {
-            Double total = 0.0;
-            total += objHistoricoDTO.getEntrada();
-            total -= objHistoricoDTO.getSaida();
-            
             pst = conexao.prepareStatement(sql);
             pst.setInt(1, objHistoricoDTO.getId());
             pst.setString(2, objHistoricoDTO.getData());
             pst.setString(3, objHistoricoDTO.getHistorico());
             pst.setDouble(4, objHistoricoDTO.getEntrada());
             pst.setDouble(5, objHistoricoDTO.getSaida());
+            Double total = 0.0;
+            total += objHistoricoDTO.getEntrada();
+            total -= objHistoricoDTO.getSaida();
             pst.setDouble(6, total);
 
             int add  = pst.executeUpdate();
@@ -106,16 +105,17 @@ public class HistoricoDAO {
         String sql = "update tb_historicos set data = ?, historico = ?, entrada = ?, saida = ?, total = ?  where id_historico = ?";
         conexao = ConexaoDAO.conector();
         try {
-            Double total = 0.0;
-            total += objHistoricoDTO.getEntrada();
-            total -= objHistoricoDTO.getSaida();
+            
             pst = conexao.prepareStatement(sql);
             pst.setString(1, objHistoricoDTO.getData());    
             pst.setString(2, objHistoricoDTO.getHistorico()); 
             pst.setDouble(3, objHistoricoDTO.getEntrada());    
             pst.setDouble(4, objHistoricoDTO.getSaida());
-            pst.setDouble(5, objHistoricoDTO.getTotal());
-            pst.setDouble(6, total);
+            Double total = 0.0;
+            total += objHistoricoDTO.getEntrada();
+            total -= objHistoricoDTO.getSaida();
+            pst.setDouble(5, total);
+            pst.setDouble(6, objHistoricoDTO.getId());
             
             int add = pst.executeUpdate();
             if (add > 0) {

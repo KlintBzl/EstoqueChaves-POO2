@@ -49,7 +49,6 @@ public class UsuarioDAO {
                     telaPrincipal.MenuHistorico.setEnabled(false);
                     telaPrincipal.MenuHistoricoGer.setEnabled(false);
                     conexao.close(); 
-
                 }
 
             } else {
