@@ -100,6 +100,9 @@ Este projeto foi idealizado e desenvolvido por:
 
 ## Informações sobre o Banco de Dados usado
 
+Para manter uma conexão com o banco de dados, baixe o seguinte conector:
+(https://dev.mysql.com/downloads/connector/j/)
+
 O banco de dados usado é o SGDB, o banco de dados original tem o nome de "estoquechaves", mas é de sua opção mudá-lo, apenas tenha certeza que você atualizou as informações em 'ConexaoDAO' no pacote 'DAO'
 
 Caso não saiba como começar, temos um Prompt disponível que você pode acessar:
